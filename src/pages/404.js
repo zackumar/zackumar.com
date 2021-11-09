@@ -1,52 +1,65 @@
-import * as React from "react"
-import { Link } from "gatsby"
+import * as React from 'react'
+import { Link, useStaticQuery, graphql } from 'gatsby'
+import { Helmet } from 'react-helmet'
+
+import '../css/typography.css'
 
 // styles
 const pageStyles = {
-  color: "#232129",
-  padding: "96px",
-  fontFamily: "-apple-system, Roboto, sans-serif, serif",
+  color: '#232129',
+  fontFamily: '"Montserrat"',
+  position: 'absolute',
+  top: '50%',
+  left: '50%',
+  msTransform: 'translateX(-50%) translateY(-50%)',
+  WebkitTransform: 'translate(-50%,-50%)',
+  transform: 'translate(-50%,-50%)',
+
+  textAlign: 'center',
 }
 const headingStyles = {
-  marginTop: 0,
-  marginBottom: 64,
-  maxWidth: 320,
+  fontWeight: 'bold',
+  fontSize: '2em',
+}
+
+const subHeadingStyles = {
+  fontWeight: 'bold',
+  fontSize: '1.5em',
+}
+
+const textDivStyle = {
+  maxWidth: '300px',
 }
 
 const paragraphStyles = {
-  marginBottom: 48,
-}
-const codeStyles = {
-  color: "#8A6534",
-  padding: 4,
-  backgroundColor: "#FFF4DB",
-  fontSize: "1.25rem",
-  borderRadius: 4,
+  fontSize: '1.125em',
 }
 
 // markup
 const NotFoundPage = () => {
+  const data = useStaticQuery(graphql`
+    query MyQuery {
+      site {
+        siteMetadata {
+          title
+        }
+      }
+    }
+  `)
+
   return (
     <main style={pageStyles}>
-      <title>Not found</title>
-      <h1 style={headingStyles}>Page not found</h1>
-      <p style={paragraphStyles}>
-        Sorry{" "}
-        <span role="img" aria-label="Pensive emoji">
-          😔
-        </span>{" "}
-        we couldn’t find what you were looking for.
-        <br />
-        {process.env.NODE_ENV === "development" ? (
-          <>
-            <br />
-            Try creating a page in <code style={codeStyles}>src/pages/</code>.
-            <br />
-          </>
-        ) : null}
-        <br />
-        <Link to="/">Go home</Link>.
-      </p>
+      <Helmet>
+        <title>Page Not Found | {data.site.siteMetadata.title}</title>
+      </Helmet>
+      <h1 style={headingStyles}>*SHRUG*</h1>
+      <br />
+      <h2 style={subHeadingStyles}>Well. This is Awkward</h2>
+      <div style={textDivStyle}>
+        <p style={paragraphStyles}>It seems you've been routed to a page that doesn't exist. Huh.</p>
+      </div>
+      <br />
+      <Link to="/">Go home</Link>.
     </main>
   )
 }

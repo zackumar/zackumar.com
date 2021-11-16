@@ -8,7 +8,6 @@ import '../css/typography.css'
 // styles
 const pageStyles = {
   color: '#232129',
-  fontFamily: '"Montserrat"',
   position: 'absolute',
   top: '50%',
   left: '50%',
@@ -40,7 +39,7 @@ const paragraphStyles = {
 }
 
 const linkStyle = {
-  color: 'red',
+  color: '#000',
 }
 
 // markup

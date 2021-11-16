@@ -2,6 +2,10 @@ import React from 'react'
 import { Helmet } from 'react-helmet'
 import { useStaticQuery, graphql } from 'gatsby'
 
+const layoutStyle = {
+  fontFamily: 'Times New Roman',
+}
+
 const Layout = ({ pageTitle, children }) => {
   const data = useStaticQuery(graphql`
     query siteTitleQuery {
@@ -20,7 +24,7 @@ const Layout = ({ pageTitle, children }) => {
           {pageTitle} | {data.site.siteMetadata.title}
         </title>
       </Helmet>
-      <main>{children}</main>
+      <main style={layoutStyle}>{children}</main>
     </div>
   )
 }

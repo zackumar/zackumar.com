@@ -2,6 +2,28 @@ module.exports = {
   siteMetadata: {
     siteUrl: 'https://www.zackumar.com',
     title: 'Zack Umar',
+    menuLinks: [
+      {
+        name: 'Home',
+        link: '/',
+      },
+      {
+        name: 'About',
+        link: '/about',
+      },
+      {
+        name: 'Projects',
+        link: '/projects',
+      },
+      {
+        name: 'Blog',
+        link: '/blog',
+      },
+      {
+        name: '404',
+        link: '/404',
+      },
+    ],
   },
   plugins: [
     'gatsby-plugin-styled-components',

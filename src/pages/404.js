@@ -1,6 +1,7 @@
 import * as React from 'react'
-import { Link, useStaticQuery, graphql } from 'gatsby'
-import { Helmet } from 'react-helmet'
+import { Link } from 'gatsby'
+
+import Layout from '../components/layout'
 
 import '../css/typography.css'
 
@@ -19,7 +20,10 @@ const pageStyles = {
 }
 const headingStyles = {
   fontWeight: 'bold',
-  fontSize: '2em',
+  fontSize: '2.5em',
+  margin: '0',
+  padding: '0',
+  whiteSpace: 'nowrap',
 }
 
 const subHeadingStyles = {
@@ -35,32 +39,27 @@ const paragraphStyles = {
   fontSize: '1.125em',
 }
 
+const linkStyle = {
+  color: 'red',
+}
+
 // markup
 const NotFoundPage = () => {
-  const data = useStaticQuery(graphql`
-    query MyQuery {
-      site {
-        siteMetadata {
-          title
-        }
-      }
-    }
-  `)
-
   return (
-    <main style={pageStyles}>
-      <Helmet>
-        <title>Page Not Found | {data.site.siteMetadata.title}</title>
-      </Helmet>
-      <h1 style={headingStyles}>*SHRUG*</h1>
-      <br />
-      <h2 style={subHeadingStyles}>Well. This is Awkward</h2>
-      <div style={textDivStyle}>
-        <p style={paragraphStyles}>It seems you've been routed to a page that doesn't exist. Huh.</p>
+    <Layout pageTitle="Page Not Found">
+      <div style={pageStyles}>
+        <h1 style={headingStyles}>¯\_(ツ)_/¯</h1>
+        <br />
+        <h2 style={subHeadingStyles}>Well, This is Awkward.</h2>
+        <div style={textDivStyle}>
+          <p style={paragraphStyles}>It seems you've been routed to a page that doesn't exist. Huh.</p>
+        </div>
+        <br />
+        <Link style={linkStyle} to="/">
+          Go home
+        </Link>
       </div>
-      <br />
-      <Link to="/">Go home</Link>.
-    </main>
+    </Layout>
   )
 }
 

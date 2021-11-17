@@ -3,9 +3,10 @@ import { Helmet } from 'react-helmet'
 import { useStaticQuery, graphql } from 'gatsby'
 import Navbar from './navbar'
 
+import '../css/layout.css'
+
 const layoutStyle = {
   fontFamily: 'Times New Roman',
-  padding: 32,
 }
 
 const Layout = ({ pageTitle, children }) => {

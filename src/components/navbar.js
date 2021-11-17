@@ -8,6 +8,7 @@ const containerStyle = {
   display: 'flex',
   justifyContent: 'space-between',
   flex: 1,
+  padding: 32,
 }
 
 const ulNavStyle = {
@@ -29,7 +30,7 @@ const LinkItem = styled.li`
 
 const LinkText = styled(Link)`
   color: #000;
-  text-decoration: ${({ to }) => (to === window.location.pathname ? 'underline' : 'none')};
+  text-decoration: ${({ to }) => (typeof window !== 'undefined' ? (to === window.location.pathname ? 'underline' : 'none') : 'none')};
 
   &:hover {
     text-decoration: underline;

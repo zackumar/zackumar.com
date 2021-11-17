@@ -1,9 +1,7 @@
 import * as React from 'react'
 import { Link } from 'gatsby'
 
-import Layout from '../components/layout'
-
-import '../css/typography.css'
+import { NoNavLayout } from '../components/layout'
 
 // styles
 const pageStyles = {
@@ -45,7 +43,7 @@ const linkStyle = {
 // markup
 const NotFoundPage = () => {
   return (
-    <Layout pageTitle="Page Not Found">
+    <NoNavLayout pageTitle="Page Not Found">
       <div style={pageStyles}>
         <h1 style={headingStyles}>¯\_(ツ)_/¯</h1>
         <br />
@@ -58,7 +56,7 @@ const NotFoundPage = () => {
           Go home
         </Link>
       </div>
-    </Layout>
+    </NoNavLayout>
   )
 }
 

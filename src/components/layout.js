@@ -1,9 +1,11 @@
 import React from 'react'
 import { Helmet } from 'react-helmet'
 import { useStaticQuery, graphql } from 'gatsby'
+import Navbar from './navbar'
 
 const layoutStyle = {
   fontFamily: 'Times New Roman',
+  padding: 32,
 }
 
 const Layout = ({ pageTitle, children }) => {
@@ -11,6 +13,10 @@ const Layout = ({ pageTitle, children }) => {
     query siteTitleQuery {
       site {
         siteMetadata {
+          menuLinks {
+            link
+            name
+          }
           title
         }
       }
@@ -23,6 +29,20 @@ const Layout = ({ pageTitle, children }) => {
         <title>
           {pageTitle} | {data.site.siteMetadata.title}
         </title>
+      </Helmet>
+      <main style={layoutStyle}>
+        <Navbar menuLinks={data.site.siteMetadata.menuLinks} />
+        {children}
+      </main>
+    </div>
+  )
+}
+
+export const NoNavLayout = ({ pageTitle, children }) => {
+  return (
+    <div>
+      <Helmet>
+        <title>{pageTitle}</title>
       </Helmet>
       <main style={layoutStyle}>{children}</main>
     </div>

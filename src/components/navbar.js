@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'gatsby'
+
 import styled from 'styled-components'
 
 const containerStyle = {
@@ -28,7 +29,7 @@ const LinkItem = styled.li`
 
 const LinkText = styled(Link)`
   color: #000;
-  text-decoration: none;
+  text-decoration: ${({ to }) => (to === window.location.pathname ? 'underline' : 'none')};
 
   &:hover {
     text-decoration: underline;

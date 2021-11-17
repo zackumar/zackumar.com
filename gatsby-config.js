@@ -19,10 +19,6 @@ module.exports = {
         name: 'Blog',
         link: '/blog',
       },
-      {
-        name: '404',
-        link: '/404',
-      },
     ],
   },
   plugins: [

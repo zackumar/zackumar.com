@@ -3,12 +3,12 @@ import * as React from 'react'
 import Layout from '../components/layout'
 
 // markup
-const IndexPage = () => {
+const AboutPage = () => {
   return (
-    <Layout pageTitle="Home">
-      <h1>Hi, I'm Zack</h1>
+    <Layout pageTitle="About">
+      <h1>About</h1>
     </Layout>
   )
 }
 
-export default IndexPage
+export default AboutPage

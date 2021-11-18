@@ -30,10 +30,15 @@ const Layout = ({ pageTitle, children }) => {
                 height: '100vh',
             }}
         >
-            <Helmet>
+            <Helmet
+                htmlAttributes={{
+                    lang: 'en',
+                }}
+            >
                 <title>
                     {pageTitle} | {data.site.siteMetadata.title}
                 </title>
+
                 <meta charset="utf-8" />
                 <meta name="description" content="Hi, I'm Zack Umar. I code things sometimes." />
                 <meta name="keywords" content="Zack Umar, Umar, Zack" />

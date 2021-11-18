@@ -25,7 +25,11 @@ const Layout = ({ pageTitle, children }) => {
   `)
 
   return (
-    <div>
+    <div
+      style={{
+        height: '100vh',
+      }}
+    >
       <Helmet>
         <title>
           {pageTitle} | {data.site.siteMetadata.title}

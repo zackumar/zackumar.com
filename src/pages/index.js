@@ -28,7 +28,7 @@ const HeaderText = styled.div`
 `
 const ContentPane = styled.div`
   flex: 1 1 auto;
-  background-color: #f5f5f5;
+  background-color: #f4f6f8;
   padding: 5rem;
 
   section {
@@ -53,7 +53,7 @@ const ContentPane = styled.div`
 
 const Footer = styled.footer`
   flex: 0 1 100px;
-  background-color: #aaaaaa;
+  background-color: #edeeef;
   // height: 100px;
 `
 

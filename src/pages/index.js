@@ -24,14 +24,14 @@ const HeaderText = styled.div`
         margin-bottom: 1rem;
     }
 `
-const ContentPane = styled.div`
-    flex-grow: 4;
+// const ContentPane = styled.div`
+//     flex-grow: 4;
 
-    position: relative;
-    background-color: #efefef;
-    width: auto;
-    padding: 3rem;
-`
+//     position: relative;
+//     background-color: #efefef;
+//     width: auto;
+//     padding: 3rem;
+// `
 
 // const Footer = styled.footer`
 //   background-color: #aaaaaa;

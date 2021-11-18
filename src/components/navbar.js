@@ -155,7 +155,7 @@ function toggleMenu() {
 
 const Navbar = ({ menuLinks }) => {
     return (
-        <div style={containerStyle}>
+        <div role="button" aria-label="home" style={containerStyle}>
             <h1
                 style={{
                     margin: '0',
@@ -175,7 +175,7 @@ const Navbar = ({ menuLinks }) => {
                         </LinkItem>
                     ))}
                 </NavMenu>
-                <Hamburger id="hamburger" onClick={toggleMenu}>
+                <Hamburger aria-label="hamburger menu" id="hamburger" onClick={toggleMenu}>
                     <span></span>
                     <span></span>
                     <span></span>

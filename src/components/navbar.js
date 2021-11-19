@@ -17,6 +17,8 @@ const containerStyle = {
 }
 
 const NavMenu = styled.ul`
+  flex: 0 1 auto;
+
   margin: 0;
   display: flex;
 

@@ -31,6 +31,10 @@ const ContentPane = styled.div`
   background-color: #f4f6f8;
   padding: 5rem;
 
+  @media (max-width: 600px) {
+    padding: 2.5rem;
+  }
+
   section {
     margin-bottom: 5rem;
     line-height: 1.5;
@@ -49,12 +53,6 @@ const ContentPane = styled.div`
       font-size: 1.25em;
     }
   }
-`
-
-const Footer = styled.footer`
-  flex: 0 1 100px;
-  background-color: #edeeef;
-  // height: 100px;
 `
 
 // markup
@@ -85,7 +83,6 @@ const IndexPage = () => {
           </p>
         </section>
       </ContentPane>
-      <Footer>hi</Footer>
     </Layout>
   )
 }

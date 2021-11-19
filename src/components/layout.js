@@ -1,16 +1,24 @@
 import React from 'react'
 import { Helmet } from 'react-helmet'
 import { useStaticQuery, graphql } from 'gatsby'
-import Navbar from './navbar'
 import styled from 'styled-components'
+
+import Navbar from './navbar'
+import Footer from './footer'
 
 import '../css/layout.css'
 
-const MainPane = styled.div`
+const LayoutPane = styled.div`
   font-family: 'Times New Roman';
   display: flex;
   flex-flow: column;
   height: 100vh;
+`
+
+const ContentPane = styled.div`
+  flex: 1 1 auto;
+  display: flex;
+  flex-flow: column;
 `
 
 const Layout = ({ pageTitle, children }) => {
@@ -29,7 +37,11 @@ const Layout = ({ pageTitle, children }) => {
   `)
 
   return (
-    <div>
+    <div
+      style={{
+        position: 'relative',
+      }}
+    >
       <Helmet
         htmlAttributes={{
           lang: 'en',
@@ -45,10 +57,12 @@ const Layout = ({ pageTitle, children }) => {
         <meta name="author" content="Zack Umar" />
         <meta name="language" content="English" />
       </Helmet>
-      <MainPane>
+      <LayoutPane>
         <Navbar menuLinks={data.site.siteMetadata.menuLinks} />
-        {children}
-      </MainPane>
+        {/* {children} */}
+        <ContentPane>{children}</ContentPane>
+        <Footer />
+      </LayoutPane>
     </div>
   )
 }
@@ -59,7 +73,7 @@ export const NoNavLayout = ({ pageTitle, children }) => {
       <Helmet>
         <title>{pageTitle}</title>
       </Helmet>
-      <MainPane>{children}</MainPane>
+      <LayoutPane>{children}</LayoutPane>
     </div>
   )
 }

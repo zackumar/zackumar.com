@@ -56,6 +56,8 @@ const Layout = ({ pageTitle, children }) => {
         <meta name="keywords" content="Zack Umar, Umar, Zack" />
         <meta name="author" content="Zack Umar" />
         <meta name="language" content="English" />
+
+        <script src="https://kit.fontawesome.com/659f724388.js" crossorigin="anonymous"></script>
       </Helmet>
       <LayoutPane>
         <Navbar menuLinks={data.site.siteMetadata.menuLinks} />

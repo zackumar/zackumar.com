@@ -1,25 +1,12 @@
 import React from 'react'
 import { Helmet } from 'react-helmet'
 import { useStaticQuery, graphql } from 'gatsby'
-import styled from 'styled-components'
 
 import Navbar from './navbar'
 import Footer from './footer'
 
 import '../css/layout.css'
-
-const LayoutPane = styled.div`
-    font-family: 'Times New Roman';
-    display: flex;
-    flex-flow: column;
-    height: 100vh;
-`
-
-const ContentPane = styled.div`
-    flex: 1 1 auto;
-    display: flex;
-    flex-flow: column;
-`
+import * as layoutStyle from './layout.module.css'
 
 const Layout = ({ pageTitle, children }) => {
     const data = useStaticQuery(graphql`
@@ -59,11 +46,11 @@ const Layout = ({ pageTitle, children }) => {
 
                 <script src="https://kit.fontawesome.com/659f724388.js" crossorigin="anonymous"></script>
             </Helmet>
-            <LayoutPane>
+            <div className={layoutStyle.container}>
                 <Navbar menuLinks={data.site.siteMetadata.menuLinks} />
-                <ContentPane>{children}</ContentPane>
+                <main className={layoutStyle.content}>{children}</main>
                 <Footer />
-            </LayoutPane>
+            </div>
         </div>
     )
 }
@@ -74,7 +61,7 @@ export const NoNavLayout = ({ pageTitle, children }) => {
             <Helmet>
                 <title>{pageTitle}</title>
             </Helmet>
-            <LayoutPane>{children}</LayoutPane>
+            <main className={layoutStyle.container}>{children}</main>
         </div>
     )
 }

@@ -49,7 +49,7 @@ const Layout = ({ pageTitle, children }) => {
             <div className={layoutStyle.container}>
                 <Navbar menuLinks={data.site.siteMetadata.menuLinks} />
                 <main className={layoutStyle.content}>{children}</main>
-                <Footer />
+                {/* <Footer /> */}
             </div>
         </div>
     )

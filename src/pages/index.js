@@ -1,5 +1,4 @@
 import * as React from 'react'
-import styled from 'styled-components'
 
 import Layout from '../components/layout'
 import * as styles from './index.module.css'
@@ -23,24 +22,34 @@ const IndexPage = () => {
                     </a>
                 </div>
             </div>
-            {/* <section>
-                <h3>About me</h3>
-                <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam consequatur repellendus reiciendis ad? Eligendi repudiandae nisi ducimus atque sit, error inventore necessitatibus
-                    odit? Minima eum quam aperiam pariatur aliquam itaque nostrum iusto quasi perspiciatis excepturi earum harum maxime consequuntur quibusdam, quae, aut voluptatem! Libero adipisci
-                    pariatur numquam soluta quis! Explicabo, fuga cupiditate atque ducimus id officiis nostrum illum omnis est unde perferendis minima adipisci maxime itaque eveniet esse, culpa
-                    officia, labore expedita non suscipit exercitationem ipsam delectus nam. Nisi inventore culpa asperiores a obcaecati, labore dolores ipsa atque sed distinctio eveniet, nam
-                    doloremque nemo, modi omnis quo cumque rerum est et quos temporibus consequuntur qui praesentium? Hic nobis facere perferendis cum libero sunt eaque ipsum quos repudiandae vero,
-                    harum culpa maiores commodi. Architecto praesentium quod dolores est quis, magnam maxime? Deserunt quisquam incidunt repellat adipisci harum perspiciatis itaque. Vero amet sequi
-                    accusamus in placeat, ab vel molestiae doloribus quidem fugiat id quisquam inventore pariatur eius quis sunt quibusdam. Rem accusantium quas voluptate sit! Soluta pariatur, eveniet
-                    ratione ipsam dignissimos repellat libero consequatur commodi consectetur iure repellendus facilis ipsa doloribus laborum optio sint sunt voluptatem unde quibusdam tenetur
-                    reiciendis praesentium porro. Labore, rerum. Nesciunt ratione numquam aperiam. Tempore hic at repellat voluptates, expedita aliquid nemo, soluta repudiandae tenetur, ab recusandae!
-                    Dolor ullam perferendis asperiores non rem recusandae aspernatur animi nostrum quaerat, vero facilis explicabo soluta, nam magnam, facere veritatis quo ipsum? Dolorum distinctio
-                    debitis officia, expedita suscipit repudiandae officiis exercitationem veritatis pariatur nobis aut laudantium accusamus illum quam temporibus quis eligendi recusandae harum rem
-                    fuga reprehenderit, vitae aperiam ut! Nemo repellendus cum et. Molestias molestiae hic eius ab fugit. Aliquam dolores blanditiis ut eum hic culpa deserunt laboriosam asperiores
-                    voluptatibus quo provident, maiores quam repudiandae magnam, esse non. Incidunt, vel fugit. Itaque reprehenderit nulla minus quae natus? Iusto, magni. Magni, maiores?
-                </p>
-            </section> */}
+            <div className={styles.content}>
+                <section id="about">
+                    <h3>About me</h3>
+                    <p>
+                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quisquam, natus dolorum aliquid quos adipisci earum. Dolore soluta harum blanditiis voluptates, odit quae nisi enim
+                        modi, dolores repellendus qui! Voluptate quae natus quaerat quam facilis! Eaque, similique. At itaque dolore, nesciunt, placeat quas, odit voluptate rem ratione a recusandae
+                        nisi unde enim sunt non aut deserunt ducimus natus quo suscipit et illum! Cum sapiente obcaecati expedita quibusdam fugiat odio excepturi eum doloribus ad rem corporis
+                    </p>
+                    <p>
+                        perferendis quas ducimus tenetur minima culpa, nobis nam harum maiores odit pariatur ex. Aut ut soluta quaerat pariatur numquam, voluptatum labore nisi delectus autem
+                        perspiciatis incidunt laudantium voluptatem voluptas facilis! Labore eius vel adipisci. Id repudiandae vel dignissimos rerum aperiam? Possimus reiciendis
+                    </p>
+                </section>
+                <section id="projects">
+                    <h3>Projects</h3>
+                    <p>
+                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quisquam, natus dolorum aliquid quos adipisci earum. Dolore soluta harum blanditiis voluptates, odit quae nisi enim
+                        modi, dolores repellendus qui! Voluptate quae natus quaerat quam facilis! Eaque, similique. At itaque dolore, nesciunt, placeat quas, odit voluptate rem ratione a recusandae
+                        nisi unde enim sunt non aut deserunt ducimus natus quo suscipit et illum! Cum sapiente obcaecati expedita quibusdam fugiat odio excepturi eum doloribus ad rem corporis
+                        voluptatem ducimus reiciendis maiores recusandae atque labore deserunt maxime eligendi explicabo necessitatibus illum, consequatur qui. Odit consequuntur non dolor autem
+                        aliquam esse repudiandae velit similique expedita delectus aut, at quasi! Voluptatem aliquid iste quaerat sed officia nulla minus obcaecati enim optio ullam sint iusto
+                        perferendis quas ducimus tenetur minima culpa, nobis nam harum maiores odit pariatur ex. Aut ut soluta quaerat pariatur numquam, voluptatum labore nisi delectus autem
+                        perspiciatis incidunt laudantium voluptatem voluptas facilis! Labore eius vel adipisci. Id repudiandae vel dignissimos rerum aperiam? Possimus reiciendis perspiciatis, in
+                        laboriosam dolore cum dolores fuga a aut dignissimos eos maiores culpa facere vitae deleniti facilis explicabo tenetur totam rem quibusdam ducimus aliquid! Iure, cum voluptas,
+                        a error dolorem, corporis maiores reprehenderit sint in commodi enim amet quaerat earum.
+                    </p>
+                </section>
+            </div>
         </Layout>
     )
 }

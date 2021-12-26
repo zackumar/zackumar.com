@@ -53,6 +53,7 @@
     display: flex;
     flex-direction: row;
     flex-shrink: 0;
+    margin-bottom: 5rem;
 }
 
 .socials a.icon {
@@ -64,4 +65,30 @@
 
 .socials a.icon span {
     display: none;
+}
+
+.content {
+    margin-bottom: 10%;
+}
+
+section {
+    margin: auto;
+    max-width: 60%;
+}
+
+section h3 {
+    margin-bottom: 0.75rem;
+    font-size: 3rem;
+}
+
+section p {
+    font-size: 1.125em;
+    line-height: 1.75rem;
+    text-align: left;
+}
+
+@media screen and (max-width: 1024px) {
+    section {
+        max-width: 80%;
+    }
 }

@@ -3,12 +3,10 @@ import { Link } from 'gatsby'
 
 import * as navbarStyles from './navbar.module.css'
 
+const navMenu = document.getElementById('navMenu')
+const hamburger = document.getElementById('hamburger')
+
 function toggleMenu() {
-    const navMenu = document.getElementById('navMenu')
-    const hamburger = document.getElementById('hamburger')
-
-    console.log('boop')
-
     if (navMenu.classList.contains(navbarStyles.active)) {
         navMenu.classList.remove(navbarStyles.active)
         hamburger.classList.remove(navbarStyles.active)
@@ -16,9 +14,11 @@ function toggleMenu() {
         navMenu.classList.add(navbarStyles.active)
         hamburger.classList.add(navbarStyles.active)
     }
+}
 
-    console.log(navMenu.classList)
-    console.log(hamburger.classList)
+function closeMenu() {
+    navMenu.classList.remove(navbarStyles.active)
+    hamburger.classList.remove(navbarStyles.active)
 }
 
 const Navbar = ({ menuLinks }) => {
@@ -33,7 +33,7 @@ const Navbar = ({ menuLinks }) => {
                 <ul id="navMenu" className={navbarStyles.nav}>
                     {menuLinks.map((link) => (
                         <li key={link.name} className={navbarStyles.navItem}>
-                            <Link to={link.link} className={navbarStyles.navLink}>
+                            <Link to={link.link} className={navbarStyles.navLink} onClick={closeMenu}>
                                 {link.name}
                             </Link>
                         </li>

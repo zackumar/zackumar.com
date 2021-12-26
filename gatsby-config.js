@@ -16,7 +16,7 @@ module.exports = {
                 link: '#projects',
             },
             {
-                name: 'Blog ->',
+                name: 'Blog',
                 link: '/blog',
             },
         ],

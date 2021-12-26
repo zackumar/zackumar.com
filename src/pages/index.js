@@ -1,4 +1,5 @@
 import * as React from 'react'
+import { Link } from 'gatsby'
 
 import Layout from '../components/layout'
 import * as styles from './index.module.css'
@@ -26,13 +27,15 @@ const IndexPage = () => {
                 <section id="about">
                     <h3>About me</h3>
                     <p>
-                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quisquam, natus dolorum aliquid quos adipisci earum. Dolore soluta harum blanditiis voluptates, odit quae nisi enim
-                        modi, dolores repellendus qui! Voluptate quae natus quaerat quam facilis! Eaque, similique. At itaque dolore, nesciunt, placeat quas, odit voluptate rem ratione a recusandae
-                        nisi unde enim sunt non aut deserunt ducimus natus quo suscipit et illum! Cum sapiente obcaecati expedita quibusdam fugiat odio excepturi eum doloribus ad rem corporis
+                        Hi there! I'm Zack Umar. I'm a student pursuing a BS in Computer Science with a concentration of software engineering. I've been coding for the majority of my life, since I was
+                        around ten. I'm a nerd, I know. I code a lot in my free time, just cause I think its fun, and that's how every programmer should be. Check out my projects below, or using the
+                        link about to see my GitHub!
                     </p>
+                    <p>As a student, I don't have too much under my belt, job wise, but I'm trying to get internships and experiences. You can check out my resume if you want to.</p>
                     <p>
-                        perferendis quas ducimus tenetur minima culpa, nobis nam harum maiores odit pariatur ex. Aut ut soluta quaerat pariatur numquam, voluptatum labore nisi delectus autem
-                        perspiciatis incidunt laudantium voluptatem voluptas facilis! Labore eius vel adipisci. Id repudiandae vel dignissimos rerum aperiam? Possimus reiciendis
+                        <Link to="/resume" className={styles.button}>
+                            Check out my resume <span className="fas fa-arrow-right" />
+                        </Link>
                     </p>
                 </section>
                 <section id="projects">

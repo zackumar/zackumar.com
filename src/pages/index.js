@@ -3,6 +3,7 @@ import { Link } from 'gatsby'
 
 import Layout from '../components/layout'
 import * as styles from './index.module.css'
+import Card from '../components/card'
 
 // markup
 const IndexPage = () => {
@@ -40,17 +41,14 @@ const IndexPage = () => {
                 </section>
                 <section id="projects">
                     <h3>Projects</h3>
-                    <p>
-                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quisquam, natus dolorum aliquid quos adipisci earum. Dolore soluta harum blanditiis voluptates, odit quae nisi enim
-                        modi, dolores repellendus qui! Voluptate quae natus quaerat quam facilis! Eaque, similique. At itaque dolore, nesciunt, placeat quas, odit voluptate rem ratione a recusandae
-                        nisi unde enim sunt non aut deserunt ducimus natus quo suscipit et illum! Cum sapiente obcaecati expedita quibusdam fugiat odio excepturi eum doloribus ad rem corporis
-                        voluptatem ducimus reiciendis maiores recusandae atque labore deserunt maxime eligendi explicabo necessitatibus illum, consequatur qui. Odit consequuntur non dolor autem
-                        aliquam esse repudiandae velit similique expedita delectus aut, at quasi! Voluptatem aliquid iste quaerat sed officia nulla minus obcaecati enim optio ullam sint iusto
-                        perferendis quas ducimus tenetur minima culpa, nobis nam harum maiores odit pariatur ex. Aut ut soluta quaerat pariatur numquam, voluptatum labore nisi delectus autem
-                        perspiciatis incidunt laudantium voluptatem voluptas facilis! Labore eius vel adipisci. Id repudiandae vel dignissimos rerum aperiam? Possimus reiciendis perspiciatis, in
-                        laboriosam dolore cum dolores fuga a aut dignissimos eos maiores culpa facere vitae deleniti facilis explicabo tenetur totam rem quibusdam ducimus aliquid! Iure, cum voluptas,
-                        a error dolorem, corporis maiores reprehenderit sint in commodi enim amet quaerat earum.
-                    </p>
+                    <div className={styles.carded}>
+                        <Card title="@newspaper_snippets" link="https://github.com/zackumar/newspaper-snippets-js">
+                            An instagram bot that posts snippets of newspapers from 100 years ago!
+                        </Card>
+                        <Card title="Bajetto" link="https://github.com/zackumar/bajetto">
+                            Bajetto is a desktop application that helps college students budget their money in an organized fashion.
+                        </Card>
+                    </div>
                 </section>
             </div>
         </Layout>

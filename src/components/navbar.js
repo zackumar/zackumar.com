@@ -3,10 +3,10 @@ import { Link } from 'gatsby'
 
 import * as navbarStyles from './navbar.module.css'
 
-const navMenu = document.getElementById('navMenu')
-const hamburger = document.getElementById('hamburger')
-
 function toggleMenu() {
+    const navMenu = document.getElementById('navMenu')
+    const hamburger = document.getElementById('hamburger')
+
     if (navMenu.classList.contains(navbarStyles.active)) {
         navMenu.classList.remove(navbarStyles.active)
         hamburger.classList.remove(navbarStyles.active)
@@ -17,6 +17,9 @@ function toggleMenu() {
 }
 
 function closeMenu() {
+    const navMenu = document.getElementById('navMenu')
+    const hamburger = document.getElementById('hamburger')
+
     navMenu.classList.remove(navbarStyles.active)
     hamburger.classList.remove(navbarStyles.active)
 }

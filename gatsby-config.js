@@ -26,6 +26,18 @@ module.exports = {
         'gatsby-plugin-image',
         'gatsby-plugin-react-helmet',
         'gatsby-plugin-sitemap',
+        {
+            resolve: 'gatsby-source-graphql',
+            options: {
+                // Arbitrary name for the remote schema Query type
+                typeName: 'GraphCMS',
+                // Field under which the remote schema will be accessible. You'll use this in your Gatsby query
+                fieldName: 'gcms',
+                // Url to query from
+                url: 'https://api-us-east-1.graphcms.com/v2/ckxnom5df57ma01xo6t62b95r/master',
+            },
+        },
+
         'gatsby-plugin-robots-txt',
         {
             resolve: 'gatsby-plugin-robots-txt',

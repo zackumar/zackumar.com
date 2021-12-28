@@ -25,8 +25,15 @@ const ResumeView = () => {
     console.log(url)
 
     return (
-        <Document className={styles.resume} file={url}>
-            <Page pageNumber={1}></Page>
+        <Document
+            className={styles.resume}
+            file={url}
+            onClick={() => {
+                console.log('boop')
+                window.location.href = url
+            }}
+        >
+            <Page className={styles.resumePage} pageNumber={1} scale={1.5}></Page>
         </Document>
     )
 }

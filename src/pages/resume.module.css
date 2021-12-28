@@ -6,5 +6,11 @@
 }
 
 .resume {
-    /* width: auto; */
+    width: auto;
+    height: auto;
+}
+
+.resumePage {
+    width: 80%;
+    height: auto;
 }

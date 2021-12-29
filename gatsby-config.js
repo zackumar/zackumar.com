@@ -5,7 +5,7 @@ module.exports = {
         menuLinks: [
             {
                 name: 'About',
-                link: '#about',
+                link: '/#about',
             },
             {
                 name: 'Resume',
@@ -13,7 +13,7 @@ module.exports = {
             },
             {
                 name: 'Projects',
-                link: '#projects',
+                link: '/#projects',
             },
             {
                 name: 'Blog',

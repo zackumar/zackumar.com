@@ -62,7 +62,7 @@ const IndexPage = () => {
                     <p>
                         Hi there! I'm Zack Umar. I'm a student pursuing a BS in Computer Science with a concentration of software engineering. I've been coding for the majority of my life, since I was
                         around ten. I'm a nerd, I know. I code a lot in my free time, just cause I think its fun, and that's how every programmer should be. Check out my projects below, or using the
-                        link about to see my GitHub!
+                        link above to see my GitHub!
                     </p>
                     <p>As a student, I don't have too much under my belt, job wise, but I'm trying to get internships and experiences. You can check out my resume if you want to.</p>
                     <p>

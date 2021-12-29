@@ -1,27 +1,3 @@
-/* .heading {
-  flex: 0 1 auto;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 2rem;
-    padding-top: 4rem;
-
-    h1 {
-        font-size: 3em;
-        max-width: 50rem;
-        text-align: center;
-    }
-
-    @media (min-width: 600px) {
-        h1 {
-            font-size: 4em;
-        }
-
-        margin-bottom: 1rem;
-    }
-} */
-
 .heading {
     flex: 0 1 auto;
     display: flex;

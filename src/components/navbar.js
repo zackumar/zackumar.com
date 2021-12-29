@@ -7,13 +7,8 @@ function toggleMenu() {
     const navMenu = document.getElementById('navMenu')
     const hamburger = document.getElementById('hamburger')
 
-    if (navMenu.classList.contains(navbarStyles.active)) {
-        navMenu.classList.remove(navbarStyles.active)
-        hamburger.classList.remove(navbarStyles.active)
-    } else {
-        navMenu.classList.add(navbarStyles.active)
-        hamburger.classList.add(navbarStyles.active)
-    }
+    navMenu.classList.toggle(navbarStyles.active)
+    hamburger.classList.toggle(navbarStyles.active)
 }
 
 function closeMenu() {

@@ -25,13 +25,10 @@ const Projects = () => {
         gcms: { projects },
     } = useStaticQuery(projectQuery)
 
-    console.log(projects)
-
     return (
         <div className={styles.carded}>
             {projects.map((project) => {
-                console.log(project.name)
-                return <Card title={project.name} link={project.link} description={project.description}></Card>
+                return <Card key={project.name} title={project.name} link={project.link} description={project.description}></Card>
             })}
         </div>
     )

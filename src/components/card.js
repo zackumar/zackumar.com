@@ -2,13 +2,13 @@ import React from 'react'
 
 import * as styles from './card.module.css'
 
-const Card = ({ title, link, children }) => {
+const Card = ({ title, link, description }) => {
     return (
         <div className={styles.card}>
             <a href={link}>
                 <h1>{title}</h1>
                 <h2>{link}</h2>
-                <span className={styles.cardText}>{children}</span>
+                <span className={styles.cardText}>{description}</span>
             </a>
         </div>
     )

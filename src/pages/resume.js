@@ -17,6 +17,15 @@ const pageQuery = graphql`
     }
 `
 
+const fade = (url) => {
+    const element = document.getElementsByClassName(styles.resume)[0]
+
+    element.classList.add(styles.fade)
+    document.getElementsByClassName(styles.resume)[0].addEventListener('click', () => {
+        window.location.href = url
+    })
+}
+
 const ResumePage = () => {
     const {
         gcms: {
@@ -30,9 +39,8 @@ const ResumePage = () => {
                 <Document
                     className={styles.resume}
                     file={url}
-                    onClick={() => {
-                        console.log('boop')
-                        window.location.href = url
+                    onLoadSuccess={() => {
+                        fade(url)
                     }}
                 >
                     <Page className={styles.resumePage} pageNumber={1} scale={1.5}></Page>

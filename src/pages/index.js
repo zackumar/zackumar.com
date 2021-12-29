@@ -1,9 +1,41 @@
 import * as React from 'react'
-import { Link } from 'gatsby'
+import { graphql, useStaticQuery, Link } from 'gatsby'
 
 import Layout from '../components/layout'
 import * as styles from './index.module.css'
 import Card from '../components/card'
+
+const projectQuery = graphql`
+    {
+        gcms {
+            projects {
+                description
+                name
+                link
+                image {
+                    url
+                }
+            }
+        }
+    }
+`
+
+const Projects = () => {
+    const {
+        gcms: { projects },
+    } = useStaticQuery(projectQuery)
+
+    console.log(projects)
+
+    return (
+        <div className={styles.carded}>
+            {projects.map((project) => {
+                console.log(project.name)
+                return <Card title={project.name} link={project.link} description={project.description}></Card>
+            })}
+        </div>
+    )
+}
 
 // markup
 const IndexPage = () => {
@@ -41,14 +73,7 @@ const IndexPage = () => {
                 </section>
                 <section id="projects">
                     <h3>Projects</h3>
-                    <div className={styles.carded}>
-                        <Card title="@newspaper_snippets" link="https://github.com/zackumar/newspaper-snippets-js">
-                            An instagram bot that posts snippets of newspapers from 100 years ago!
-                        </Card>
-                        <Card title="Bajetto" link="https://github.com/zackumar/bajetto">
-                            Bajetto is a desktop application that helps college students budget their money in an organized fashion.
-                        </Card>
-                    </div>
+                    <Projects></Projects>
                 </section>
             </div>
         </Layout>

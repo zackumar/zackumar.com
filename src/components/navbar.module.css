@@ -18,11 +18,24 @@
 
     font-weight: 700;
     font-size: 18px;
+
+    transform: rotate(0deg);
+    transition: transform 0.4s ease-in-out;
 }
 
 .logoText {
     color: #000;
     text-decoration: none;
+    transform: rotate(0deg);
+    transition: transform 0.4s ease-in-out;
+}
+
+.logo:hover {
+    transform: rotate(90deg);
+}
+
+.logo:hover .logoText {
+    transform: rotate(-90deg);
 }
 
 .nav {

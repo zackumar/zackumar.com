@@ -3,7 +3,7 @@ import { Helmet } from 'react-helmet'
 import { useStaticQuery, graphql } from 'gatsby'
 
 import Navbar from './navbar'
-import Footer from './footer'
+// import Footer from './footer'
 
 // import '../css/layout.css'
 import * as layoutStyle from './layout.module.css'

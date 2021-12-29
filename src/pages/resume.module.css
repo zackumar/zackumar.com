@@ -1,0 +1,23 @@
+.content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.resume {
+    opacity: 0;
+    transition: opacity 1s;
+
+    width: auto;
+    height: auto;
+}
+
+.resume.fade {
+    opacity: 1;
+}
+
+.resumePage {
+    width: 80%;
+    height: auto;
+}

@@ -29,4 +29,6 @@
     font-weight: 400;
     margin-top: 0px;
     color: rgba(75, 85, 99, 1);
+    text-overflow: ellipsis;
+    word-wrap: break-word;
 }

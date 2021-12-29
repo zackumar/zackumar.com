@@ -7,18 +7,16 @@ function toggleMenu() {
     const navMenu = document.getElementById('navMenu')
     const hamburger = document.getElementById('hamburger')
 
-    console.log('boop')
+    navMenu.classList.toggle(navbarStyles.active)
+    hamburger.classList.toggle(navbarStyles.active)
+}
 
-    if (navMenu.classList.contains(navbarStyles.active)) {
-        navMenu.classList.remove(navbarStyles.active)
-        hamburger.classList.remove(navbarStyles.active)
-    } else {
-        navMenu.classList.add(navbarStyles.active)
-        hamburger.classList.add(navbarStyles.active)
-    }
+function closeMenu() {
+    const navMenu = document.getElementById('navMenu')
+    const hamburger = document.getElementById('hamburger')
 
-    console.log(navMenu.classList)
-    console.log(hamburger.classList)
+    navMenu.classList.remove(navbarStyles.active)
+    hamburger.classList.remove(navbarStyles.active)
 }
 
 const Navbar = ({ menuLinks }) => {
@@ -33,7 +31,7 @@ const Navbar = ({ menuLinks }) => {
                 <ul id="navMenu" className={navbarStyles.nav}>
                     {menuLinks.map((link) => (
                         <li key={link.name} className={navbarStyles.navItem}>
-                            <Link to={link.link} className={navbarStyles.navLink}>
+                            <Link to={link.link} className={navbarStyles.navLink} onClick={closeMenu}>
                                 {link.name}
                             </Link>
                         </li>

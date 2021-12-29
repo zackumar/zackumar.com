@@ -1,9 +1,38 @@
 import * as React from 'react'
-import { Link } from 'gatsby'
+import { graphql, useStaticQuery, Link } from 'gatsby'
 
 import Layout from '../components/layout'
 import * as styles from './index.module.css'
 import Card from '../components/card'
+
+const projectQuery = graphql`
+    {
+        gcms {
+            projects {
+                description
+                name
+                link
+                image {
+                    url
+                }
+            }
+        }
+    }
+`
+
+const Projects = () => {
+    const {
+        gcms: { projects },
+    } = useStaticQuery(projectQuery)
+
+    return (
+        <div className={styles.carded}>
+            {projects.map((project) => {
+                return <Card key={project.name} title={project.name} link={project.link} description={project.description}></Card>
+            })}
+        </div>
+    )
+}
 
 // markup
 const IndexPage = () => {
@@ -30,7 +59,7 @@ const IndexPage = () => {
                     <p>
                         Hi there! I'm Zack Umar. I'm a student pursuing a BS in Computer Science with a concentration of software engineering. I've been coding for the majority of my life, since I was
                         around ten. I'm a nerd, I know. I code a lot in my free time, just cause I think its fun, and that's how every programmer should be. Check out my projects below, or using the
-                        link about to see my GitHub!
+                        link above to see my GitHub!
                     </p>
                     <p>As a student, I don't have too much under my belt, job wise, but I'm trying to get internships and experiences. You can check out my resume if you want to.</p>
                     <p>
@@ -41,14 +70,7 @@ const IndexPage = () => {
                 </section>
                 <section id="projects">
                     <h3>Projects</h3>
-                    <div className={styles.carded}>
-                        <Card title="@newspaper_snippets" link="https://github.com/zackumar/newspaper-snippets-js">
-                            An instagram bot that posts snippets of newspapers from 100 years ago!
-                        </Card>
-                        <Card title="Bajetto" link="https://github.com/zackumar/bajetto">
-                            Bajetto is a desktop application that helps college students budget their money in an organized fashion.
-                        </Card>
-                    </div>
+                    <Projects></Projects>
                 </section>
             </div>
         </Layout>

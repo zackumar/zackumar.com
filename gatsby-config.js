@@ -15,10 +15,6 @@ module.exports = {
                 name: 'Projects',
                 link: '/#projects',
             },
-            {
-                name: 'Blog',
-                link: '/blog',
-            },
         ],
     },
     plugins: [

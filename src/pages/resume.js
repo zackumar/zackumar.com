@@ -1,6 +1,8 @@
-import * as React from 'react'
+// import * as React from 'react'
+import React, { useState, useRef, useEffect } from 'react'
 import { graphql, useStaticQuery } from 'gatsby'
 import { pdfjs, Document, Page } from 'react-pdf'
+import throttle from 'lodash.throttle'
 
 import Layout from '../components/layout'
 import * as styles from './resume.module.css'
@@ -17,34 +19,45 @@ const pageQuery = graphql`
     }
 `
 
-const fade = (url) => {
-    const element = document.getElementsByClassName(styles.resume)[0]
-
-    element.classList.add(styles.fade)
-    document.getElementsByClassName(styles.resume)[0].addEventListener('click', () => {
-        window.location.href = url
-    })
-}
-
 const ResumePage = () => {
+    const pdfWrapper = useRef()
+    const [initialWidth, setInitialWidth] = useState()
+
     const {
         gcms: {
             asset: { url },
         },
     } = useStaticQuery(pageQuery)
 
+    const setPdfSize = () => {
+        if (pdfWrapper && pdfWrapper.current) {
+            console.log(pdfWrapper.current.getBoundingClientRect().width)
+            setInitialWidth(pdfWrapper.current.getBoundingClientRect().width)
+        }
+    }
+
+    useEffect(() => {
+        window.addEventListener('resize', throttle(setPdfSize, 3000))
+        setPdfSize()
+        return () => {
+            window.removeEventListener('resize', throttle(setPdfSize, 3000))
+        }
+    }, [setPdfSize])
+
+    const onDocumentLoadSuccess = () => {
+        const element = document.getElementById('resume')
+        element.classList.add(styles.fade)
+        console.log(element)
+    }
+
     return (
         <Layout pageTitle="Resume">
             <main className={styles.content}>
-                <Document
-                    className={styles.resume}
-                    file={url}
-                    onLoadSuccess={() => {
-                        fade(url)
-                    }}
-                >
-                    <Page className={styles.resumePage} pageNumber={1} scale={1.5}></Page>
-                </Document>
+                <div id="resume" className={styles.resumeWrapper} ref={pdfWrapper}>
+                    <Document file={url} onLoadSuccess={onDocumentLoadSuccess} noData="None" loading="Loading">
+                        <Page pageNumber={1} loading="" width={initialWidth} />
+                    </Document>
+                </div>
             </main>
         </Layout>
     )

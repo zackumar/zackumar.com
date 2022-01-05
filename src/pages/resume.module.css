@@ -5,19 +5,19 @@
     align-items: center;
 }
 
-.resume {
+.resumeWrapper {
     opacity: 0;
     transition: opacity 1s;
-
-    width: auto;
+    width: 70vw;
     height: auto;
 }
 
-.resume.fade {
+.resumeWrapper.fade {
     opacity: 1;
 }
 
-.resumePage {
-    width: 80%;
-    height: auto;
+@media screen and (max-width: 800px) {
+    .resumeWrapper {
+        width: 90vw;
+    }
 }

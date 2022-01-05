@@ -2,6 +2,7 @@
 import React, { useState, useRef, useEffect } from 'react'
 import { graphql, useStaticQuery } from 'gatsby'
 import { pdfjs, Document, Page } from 'react-pdf'
+import throttle from 'lodash.throttle'
 
 import Layout from '../components/layout'
 import * as styles from './resume.module.css'
@@ -20,7 +21,7 @@ const pageQuery = graphql`
 
 const ResumePage = () => {
     const pdfWrapper = useRef()
-    const [initialWidth, setInitialWidth] = React.useState()
+    const [initialWidth, setInitialWidth] = useState()
 
     const {
         gcms: {
@@ -36,10 +37,10 @@ const ResumePage = () => {
     }
 
     useEffect(() => {
-        window.addEventListener('resize', setPdfSize)
+        window.addEventListener('resize', throttle(setPdfSize, 3000))
         setPdfSize()
         return () => {
-            window.removeEventListener('resize', setPdfSize)
+            window.removeEventListener('resize', throttle(setPdfSize, 3000))
         }
     }, [setPdfSize])
 

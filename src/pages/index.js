@@ -8,7 +8,7 @@ import Card from '../components/card'
 const projectQuery = graphql`
     {
         gcms {
-            projects {
+            projects(where: { featured: true }) {
                 description
                 name
                 link
@@ -20,7 +20,7 @@ const projectQuery = graphql`
     }
 `
 
-const Projects = () => {
+const FeaturedProjects = () => {
     const {
         gcms: { projects },
     } = useStaticQuery(projectQuery)
@@ -55,7 +55,7 @@ const IndexPage = () => {
             </div>
             <div className={styles.content}>
                 <section id="about">
-                    <h3>About me</h3>
+                    <h3>A Bit About Me</h3>
                     <p>
                         Hi there! I'm Zack Umar. I'm a student pursuing a BS in Computer Science with a concentration of software engineering. I've been coding for the majority of my life, since I was
                         around ten. I'm a nerd, I know. I code a lot in my free time, just cause I think its fun, and that's how every programmer should be. Check out my projects below, or using the
@@ -69,8 +69,8 @@ const IndexPage = () => {
                     </p>
                 </section>
                 <section id="projects">
-                    <h3>Projects</h3>
-                    <Projects></Projects>
+                    <h3>Featured Projects</h3>
+                    <FeaturedProjects></FeaturedProjects>
                 </section>
             </div>
         </Layout>

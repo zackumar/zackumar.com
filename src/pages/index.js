@@ -7,13 +7,17 @@ import Card from '../components/card'
 
 const projectQuery = graphql`
     {
-        gcms {
-            projects(where: { featured: true }) {
-                description
+        allContentfulProject(filter: { featured: { eq: true } }) {
+            nodes {
                 name
+                previewImage {
+                    file {
+                        url
+                    }
+                }
                 link
-                image {
-                    url
+                description {
+                    raw
                 }
             }
         }
@@ -22,13 +26,13 @@ const projectQuery = graphql`
 
 const FeaturedProjects = () => {
     const {
-        gcms: { projects },
+        allContentfulProject: { nodes },
     } = useStaticQuery(projectQuery)
 
     return (
         <div className={styles.carded}>
-            {projects.map((project) => {
-                return <Card key={project.name} title={project.name} link={project.link} description={project.description}></Card>
+            {nodes.map((project) => {
+                return <Card key={project.name} title={project.name} link={project.link} description={JSON.parse(project.description.raw).content[0].content[0].value}></Card>
             })}
         </div>
     )

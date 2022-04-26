@@ -11,8 +11,8 @@ pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/$
 
 const pageQuery = graphql`
     {
-        gcms {
-            asset(where: { id: "ckxqf9uaw56720a76zcocd2qs" }) {
+        contentfulAsset(filename: { regex: "/resume/gi" }) {
+            file {
                 url
             }
         }
@@ -24,8 +24,8 @@ const ResumePage = () => {
     const [initialWidth, setInitialWidth] = useState()
 
     const {
-        gcms: {
-            asset: { url },
+        contentfulAsset: {
+            file: { url },
         },
     } = useStaticQuery(pageQuery)
 
@@ -47,14 +47,13 @@ const ResumePage = () => {
     const onDocumentLoadSuccess = () => {
         const element = document.getElementById('resume')
         element.classList.add(styles.fade)
-        console.log(element)
     }
 
     return (
         <Layout pageTitle="Resume">
             <main className={styles.content}>
                 <div id="resume" className={styles.resumeWrapper} ref={pdfWrapper}>
-                    <Document file={url} onLoadSuccess={onDocumentLoadSuccess} noData="None" loading="Loading">
+                    <Document file={{ url: url }} onLoadSuccess={onDocumentLoadSuccess} noData="None" loading="Loading">
                         <Page pageNumber={1} loading="" width={initialWidth} />
                     </Document>
                 </div>

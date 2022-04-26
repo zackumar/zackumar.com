@@ -1,3 +1,7 @@
+require('dotenv').config({
+    path: `.env.${process.env.NODE_ENV}`,
+})
+
 module.exports = {
     siteMetadata: {
         siteUrl: 'https://www.zackumar.com',
@@ -23,14 +27,10 @@ module.exports = {
         'gatsby-plugin-react-helmet',
         'gatsby-plugin-sitemap',
         {
-            resolve: 'gatsby-source-graphql',
+            resolve: `gatsby-source-contentful`,
             options: {
-                // Arbitrary name for the remote schema Query type
-                typeName: 'GraphCMS',
-                // Field under which the remote schema will be accessible. You'll use this in your Gatsby query
-                fieldName: 'gcms',
-                // Url to query from
-                url: 'https://api-us-east-1.graphcms.com/v2/ckxnom5df57ma01xo6t62b95r/master',
+                spaceId: `p0kfglvr6ppk`,
+                accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
             },
         },
 

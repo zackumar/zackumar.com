@@ -4,7 +4,7 @@ import { graphql, useStaticQuery } from 'gatsby'
 import { pdfjs, Document, Page } from 'react-pdf'
 import throttle from 'lodash.throttle'
 
-import Layout from '../components/layout'
+import Layout from '../components/Layout'
 import * as styles from './resume.module.css'
 
 pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.min.js`

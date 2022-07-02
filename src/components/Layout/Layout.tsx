@@ -3,7 +3,7 @@ import { Helmet } from "react-helmet";
 import { useStaticQuery, graphql } from "gatsby";
 
 import Header from "../Header";
-import { GlobalStyle, LayoutContent, LayoutWrapper } from "./layout.styles";
+import { GlobalStyle, LayoutContent, LayoutWrapper } from "./Layout.styles";
 
 interface LayoutProps {
   pageTitle: string;

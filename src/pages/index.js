@@ -3,7 +3,7 @@ import { graphql, useStaticQuery, Link } from 'gatsby'
 
 import Layout from '../components/Layout'
 import * as styles from './index.module.css'
-import Card from '../components/card'
+import Card from '../components/Card'
 
 const projectQuery = graphql`
     {
@@ -28,6 +28,8 @@ const FeaturedProjects = () => {
     const {
         allContentfulProject: { nodes },
     } = useStaticQuery(projectQuery)
+
+    console.log(nodes)
 
     return (
         <div className={styles.carded}>

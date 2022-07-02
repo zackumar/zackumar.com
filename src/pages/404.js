@@ -1,7 +1,7 @@
 import * as React from 'react'
 import { Link } from 'gatsby'
 
-import { NoNavLayout } from '../components/layout'
+import { NoNavLayout } from '../components/Layout/Layout'
 
 // styles
 const pageStyles = {

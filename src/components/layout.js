@@ -2,7 +2,7 @@ import React from 'react'
 import { Helmet } from 'react-helmet'
 import { useStaticQuery, graphql } from 'gatsby'
 
-import Navbar from './navbar'
+import Header from './Header'
 // import Footer from './footer'
 
 // import '../css/layout.css'
@@ -47,7 +47,7 @@ const Layout = ({ pageTitle, children }) => {
                 <script src="https://kit.fontawesome.com/659f724388.js" crossorigin="anonymous"></script>
             </Helmet>
             <div className={layoutStyle.container}>
-                <Navbar menuLinks={data.site.siteMetadata.menuLinks} />
+                <Header menuLinks={data.site.siteMetadata.menuLinks} />
                 <main className={layoutStyle.content}>{children}</main>
                 {/* <Footer /> */}
             </div>

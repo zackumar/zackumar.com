@@ -1,7 +1,6 @@
 node_modules/
 .cache/
 public
-src/css/scrapped.css
 .vscode
-
 .env.*
+.npmrc

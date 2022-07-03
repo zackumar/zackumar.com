@@ -44,7 +44,7 @@ const FeaturedProjects = () => {
 const IndexPage = () => {
     return (
         <Layout pageTitle="Home">
-            <div className={styles.heading}>
+            <div id="r_content" className={styles.heading}>
                 <h1>Hi, I'm Zack.</h1>
                 <h2>I code things sometimes</h2>
                 <div className={styles.socials}>

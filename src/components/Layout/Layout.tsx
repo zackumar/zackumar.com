@@ -5,6 +5,7 @@ import { useStaticQuery, graphql } from "gatsby";
 import Header from "../Header";
 
 import styled, { createGlobalStyle } from "styled-components";
+import SkipToContent from "./SkipToContent";
 
 const GlobalStyle = createGlobalStyle`
   html,
@@ -79,6 +80,7 @@ export function Layout({ pageTitle, children }: LayoutProps) {
         ></script>
       </Helmet>
       <LayoutWrapper>
+        <SkipToContent />
         <Header menuLinks={data.site.siteMetadata.menuLinks} />
         <LayoutContent>{children}</LayoutContent>
         {/* <Footer /> */}

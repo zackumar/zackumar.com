@@ -65,7 +65,7 @@ const IndexPage = () => {
     <Layout pageTitle="Home">
       <div id="r_content" className={styles.heading}>
         <h1>Hi, I'm Zack.</h1>
-        {/* <h2>I code things sometimes</h2> */}
+        <h2>I code things sometimes</h2>
         <div className={styles.socials}>
           <a
             aria-label="github"
@@ -102,7 +102,7 @@ const IndexPage = () => {
             !
           </p>
           <p>
-            Software Engineering Intern at{" "}
+            Current Software Engineering Intern at{" "}
             <StyledLink
               href="https://www.heb.com"
               colors={{

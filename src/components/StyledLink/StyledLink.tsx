@@ -1,15 +1,19 @@
-import { Link } from "gatsby";
+import React from "react";
+import { GatsbyLinkProps, Link } from "gatsby";
 import styled from "styled-components";
 import { ColorType } from "../../theme/types";
 
+interface ColorProps {
+  leftColor?: ColorType;
+  rightColor?: ColorType;
+  mergeColor?: ColorType;
+  textColor?: ColorType;
+  hoverColor?: ColorType;
+}
+
 export const StyledLinkExternal = styled.a<{
-  colors?: {
-    leftColor?: ColorType;
-    rightColor?: ColorType;
-    mergeColor?: ColorType;
-    textColor?: ColorType;
-    hoverColor?: ColorType;
-  };
+  colors?: ColorProps;
+  extended: boolean;
 }>`
   white-space: nowrap;
   position: relative;
@@ -25,20 +29,20 @@ export const StyledLinkExternal = styled.a<{
     position: absolute;
     z-index: -1;
     top: 5%;
-    width: 50%;
+    width: ${({ extended }) => (extended ? "55%" : "47%")};
     height: 100%;
   }
 
   &:before {
     transform: translateY(8%);
-    left: 5%;
+    left: ${({ extended }) => (extended ? "-2%" : "5%")};
     background-color: ${({ colors }) =>
       colors?.rightColor ? colors.rightColor : "#71e2a6"};
   }
 
   &:after {
     transform: translateY(-8%);
-    right: 5%;
+    right: ${({ extended }) => (extended ? "-2%" : "5%")};
     background-color: ${({ colors }) =>
       colors?.leftColor ? colors.leftColor : "#fee440"};
   }
@@ -48,29 +52,25 @@ export const StyledLinkExternal = styled.a<{
 
     &:before,
     &:after {
+      width: 55%;
       background-color: ${({ colors }) =>
         colors?.mergeColor ? colors.mergeColor : "#4c3d6d"};
       transform: translateY(0);
     }
 
     &:before {
-      left: -0%;
+      left: -2%;
     }
 
     &:after {
-      right: -0%;
+      right: -2%;
     }
   }
 `;
 
-export const StyledLink = styled(Link)<{
-  colors?: {
-    leftColor?: ColorType;
-    rightColor?: ColorType;
-    mergeColor?: ColorType;
-    textColor?: ColorType;
-    hoverColor?: ColorType;
-  };
+export const StyledLinkInternal = styled(Link)<{
+  colors?: ColorProps;
+  extended: boolean;
 }>`
   white-space: nowrap;
   position: relative;
@@ -86,20 +86,20 @@ export const StyledLink = styled(Link)<{
     position: absolute;
     z-index: -1;
     top: 5%;
-    width: 50%;
+    width: ${({ extended }) => (extended ? "55%" : "47%")};
     height: 100%;
   }
 
   &:before {
     transform: translateY(8%);
-    left: 5%;
+    left: ${({ extended }) => (extended ? "-2%" : "5%")};
     background-color: ${({ colors }) =>
       colors?.rightColor ? colors.rightColor : "#71e2a6"};
   }
 
   &:after {
     transform: translateY(-8%);
-    right: 5%;
+    right: ${({ extended }) => (extended ? "-2%" : "5%")};
     background-color: ${({ colors }) =>
       colors?.leftColor ? colors.leftColor : "#fee440"};
   }
@@ -109,17 +109,68 @@ export const StyledLink = styled(Link)<{
 
     &:before,
     &:after {
+      width: 55%;
       background-color: ${({ colors }) =>
         colors?.mergeColor ? colors.mergeColor : "#4c3d6d"};
       transform: translateY(0);
     }
 
     &:before {
-      left: -0%;
+      left: -2%;
     }
 
     &:after {
-      right: -0%;
+      right: -2%;
     }
   }
 `;
+
+type StyledLinkProps =
+  | {
+      colors?: ColorProps;
+      href: string;
+      to?: never;
+      extended?: boolean;
+      children?: React.ReactNode;
+    }
+  | ({
+      colors?: ColorProps;
+      href?: never;
+      to: string;
+      extended?: boolean;
+      children?: React.ReactNode;
+    } & Omit<GatsbyLinkProps<{}>, "ref">);
+
+export function StyledLink({
+  colors,
+  href,
+  to,
+  extended = false,
+  children,
+  ...props
+}: StyledLinkProps) {
+  if (href) {
+    return (
+      <StyledLinkExternal
+        colors={colors}
+        href={href}
+        extended={extended}
+        {...props}
+      >
+        {children}
+      </StyledLinkExternal>
+    );
+  }
+
+  return (
+    <StyledLinkInternal
+      colors={colors}
+      to={to ?? ""}
+      extended={extended}
+      {...props}
+    >
+      {" "}
+      {children}
+    </StyledLinkInternal>
+  );
+}

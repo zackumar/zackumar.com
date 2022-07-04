@@ -37,7 +37,7 @@ const CardText = styled.span`
   color: rgba(75, 85, 99, 1);
 `;
 
-interface CardProps {
+export interface CardProps {
   title: string;
   link: string;
   description: string;

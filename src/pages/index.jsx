@@ -3,7 +3,8 @@ import * as React from "react";
 import Layout from "../components/Layout";
 import * as styles from "./index.module.css";
 import Card from "../components/Card";
-import StyledLink, { StyledLinkExternal } from "../components/StyledLink";
+import StyledLink from "../components/StyledLink";
+import { color } from "../theme/utils";
 
 // const projectQuery = graphql`
 //   {
@@ -64,7 +65,7 @@ const IndexPage = () => {
     <Layout pageTitle="Home">
       <div id="r_content" className={styles.heading}>
         <h1>Hi, I'm Zack.</h1>
-        <h2>I code things sometimes</h2>
+        {/* <h2>I code things sometimes</h2> */}
         <div className={styles.socials}>
           <a
             aria-label="github"
@@ -94,25 +95,25 @@ const IndexPage = () => {
           <h3>A Bit About Me</h3>
           <p>
             Hi there! I'm Zack Umar. I'm a student pursuing a BS in Computer
-            Science. Check out my projects below, or using the link above to see
-            my{" "}
-            <StyledLinkExternal href="https://www.github.com/zackumar">
+            Science. Check out my projects below or look at my{" "}
+            <StyledLink href="https://www.github.com/zackumar">
               GitHub
-            </StyledLinkExternal>
+            </StyledLink>
             !
           </p>
           <p>
-            Current Software Engineering Intern at{" "}
-            <StyledLinkExternal
+            Software Engineering Intern at{" "}
+            <StyledLink
               href="https://www.heb.com"
-              // colors={{
-              //   leftColor: "#dc291e",
-              //   rightColor: "#ff0000",
-              //   textColor: "#fff",
-              // }}
+              colors={{
+                leftColor: "#dc291e",
+                rightColor: "#ff0000",
+                textColor: color("white"),
+              }}
+              extended
             >
               H-E-B
-            </StyledLinkExternal>
+            </StyledLink>
             !
           </p>
           <p>

@@ -1,4 +1,3 @@
-import { StyledLinkExternal, StyledLink } from "./StyledLink";
+import { StyledLink } from "./StyledLink";
 
-export { StyledLinkExternal };
 export default StyledLink;

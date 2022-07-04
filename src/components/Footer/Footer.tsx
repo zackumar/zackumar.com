@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 const FooterContainer = styled.footer`
   flex: 0 1;
-  background-color: #eaebec;
+  background-color: #efefef;
   padding: 2rem;
   bottom: 0;
 

@@ -6,6 +6,7 @@ import Header from "../Header";
 
 import styled, { createGlobalStyle } from "styled-components";
 import SkipToContent from "./SkipToContent";
+import Footer from "../Footer";
 
 const GlobalStyle = createGlobalStyle`
   html,
@@ -16,12 +17,13 @@ const GlobalStyle = createGlobalStyle`
 
       width: 100%;
       min-height: 100vh;
+
+      font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+        Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   }
 `;
 
 const LayoutWrapper = styled.div`
-  font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   display: flex;
   flex-direction: column;
   height: 100vh;
@@ -83,7 +85,7 @@ export function Layout({ pageTitle, children }: LayoutProps) {
         <SkipToContent />
         <Header menuLinks={data.site.siteMetadata.menuLinks} />
         <LayoutContent>{children}</LayoutContent>
-        {/* <Footer /> */}
+        <Footer />
       </LayoutWrapper>
     </>
   );
@@ -95,6 +97,8 @@ export const NoNavLayout = ({ pageTitle, children }: LayoutProps) => {
       <Helmet>
         <title>{pageTitle}</title>
       </Helmet>
+      <GlobalStyle />
+
       <LayoutContent>{children}</LayoutContent>
     </div>
   );

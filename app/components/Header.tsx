@@ -19,7 +19,7 @@ export default function Header() {
     >
       <Link className="flex flex-row items-center space-x-2" to="/">
         <span className="h-5 w-5 rounded-full bg-red-400"></span>
-        <p className="text-lg font-semibold">ZU</p>
+        <p className="text-lg font-semibold text-black dark:text-white">ZU</p>
       </Link>
       <nav>
         <ul className="flex flex-row items-center space-x-8">
@@ -28,7 +28,9 @@ export default function Header() {
               <NavLink
                 to={to}
                 className={({ isActive }) =>
-                  isActive ? 'text-black' : 'text-gray-500 hover:text-gray-800'
+                  isActive
+                    ? 'text-black dark:text-white'
+                    : 'text-gray-500 hover:text-gray-800 dark:text-gray-300 dark:hover:text-gray-100'
                 }
                 end
               >

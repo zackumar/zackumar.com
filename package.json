@@ -13,10 +13,13 @@
     "start": "cross-env NODE_ENV=production npm run dev:wrangler"
   },
   "dependencies": {
+    "@react-pdf/renderer": "^3.0.1",
     "@remix-run/cloudflare": "^1.7.2",
     "@remix-run/cloudflare-pages": "^1.7.2",
     "@remix-run/react": "^1.7.2",
     "cross-env": "^7.0.3",
+    "framer-motion": "^7.6.7",
+    "github-calendar": "^2.3.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2"
   },

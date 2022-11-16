@@ -21,7 +21,7 @@ export default function Index() {
             </p>
             <div className="mt-auto flex flex-row items-center space-x-4">
               <a
-                className="flex transform flex-row items-center space-x-1 rounded-full bg-black px-5 py-3 text-white shadow duration-100 ease-in-out hover:-translate-y-0.5 hover:scale-105"
+                className="flex transform flex-row items-center space-x-1 rounded-full bg-zinc-900 px-5 py-3 text-white shadow duration-100 ease-in-out hover:-translate-y-0.5 hover:scale-105"
                 href={`mailto:${CONTACT_EMAIL}`}
               >
                 <span className="fill-white">
@@ -58,10 +58,10 @@ export default function Index() {
           id="aboutme"
           className="grid w-full grid-cols-1 gap-4 md:grid-cols-4"
         >
-          <div className="col-span-1 hidden w-full rounded-2xl bg-[#303443] p-14 text-white shadow-md md:block">
+          <div className="col-span-1 hidden w-full rounded-2xl bg-zinc-700 p-14 text-white shadow-md md:block">
             <h2 className="text-4xl">About Me</h2>
           </div>
-          <div className="col-span-3 w-full rounded-2xl bg-[#1b1b1f] p-10 text-white shadow-md">
+          <div className="col-span-3 w-full rounded-2xl  bg-zinc-800 p-10 text-white shadow-md">
             <h2 className="mb-8 text-4xl md:hidden">About Me</h2>
             <div className="space-y-5">
               <p>

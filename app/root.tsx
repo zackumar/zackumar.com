@@ -7,6 +7,7 @@ import {
   Scripts,
   ScrollRestoration,
 } from '@remix-run/react';
+import { useEffect, useState } from 'react';
 
 import tailwindStylesheetUrl from './styles/tailwind.css';
 
@@ -21,8 +22,19 @@ export const meta: MetaFunction = () => ({
 });
 
 export default function App() {
+  const [isDarkMode, setIsDarkMode] = useState(false);
+
+  useEffect(() => {
+    setIsDarkMode(
+      typeof document !== 'undefined' &&
+        localStorage.getItem('theme') === 'dark'
+    );
+
+    console.log(isDarkMode);
+  }, []);
+
   return (
-    <html lang="en" className="dark h-full">
+    <html lang="en" className={`${isDarkMode ? 'dark' : 'light'} h-full`}>
       <head>
         <Meta />
         <Links />

@@ -26,8 +26,10 @@ export default function App() {
 
   useEffect(() => {
     setIsDarkMode(
-      typeof document !== 'undefined' &&
-        localStorage.getItem('theme') === 'dark'
+      (typeof document !== 'undefined' &&
+        localStorage.getItem('theme') === 'dark') ||
+        (!('theme' in localStorage) &&
+          matchMedia('(prefers-color-scheme: dark)').matches)
     );
 
     console.log(isDarkMode);

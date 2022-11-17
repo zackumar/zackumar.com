@@ -155,7 +155,10 @@ export default function Index() {
                   ></img>
                 </div>
               </a>
-              <a className="group" href="https://gdscutsa.com">
+              <a
+                className="group"
+                href="https://github.com/zackumar/utsa-cs-bot"
+              >
                 <div className="relative min-h-[450px] w-full space-y-2 overflow-hidden rounded-2xl bg-zinc-700 transition duration-200 ease-in-out hover:-translate-y-1 hover:scale-[1.01]">
                   <div className="flex flex-row justify-between p-4">
                     <div>

@@ -34,7 +34,7 @@ export default function App() {
   }, []);
 
   return (
-    <html lang="en" className={`${isDarkMode ? 'dark' : 'light'} h-full`}>
+    <html lang="en" className={`${isDarkMode ? 'dark' : ''} h-full`}>
       <head>
         <Meta />
         <Links />

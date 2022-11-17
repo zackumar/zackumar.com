@@ -5,6 +5,7 @@ import Header from '~/components/Header';
 import { CONTACT_EMAIL, GITHUB_URL, LINKEDIN_URL } from '~/constants/links';
 import { motion } from 'framer-motion';
 import ExternalSVG from '~/assets/ExternalSVG';
+import { Link } from '@remix-run/react';
 
 export default function Index() {
   return (
@@ -106,6 +107,12 @@ export default function Index() {
                   Fan of tennis, outdoor activities, 3D printing and sometimes
                   reading (sometimes).
                 </p>
+                <a
+                  className="block w-fit rounded-full bg-white py-2 px-5 text-black shadow transition duration-100 ease-in-out hover:-translate-y-0.5 hover:scale-105"
+                  href="/assets/files/resume2022.pdf"
+                >
+                  Resume
+                </a>
               </div>
             </div>
           </section>

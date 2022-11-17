@@ -1,12 +1,10 @@
 import { Link, NavLink } from '@remix-run/react';
 import { Navigation } from '~/constants/navigation';
-import { useInView } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { useEffect, useRef, useState } from 'react';
 import SunSVG from '~/assets/SunSVG';
 
 export default function Header() {
-  const ref = useRef<HTMLElement>(null);
-  const isInView = useInView(ref, { once: true });
   const [isDarkMode, setIsDarkMode] = useState(false);
 
   useEffect(() => {
@@ -20,20 +18,18 @@ export default function Header() {
     }
   }, [isDarkMode]);
 
-  console.log(isDarkMode);
-
   return (
-    <header
-      ref={ref}
+    <motion.header
+      initial={{ opacity: 0, y: '-100%' }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 1.5 }}
       className="flex flex-row justify-between pb-5"
-      style={{
-        transform: isInView ? 'translateY(0%)' : 'translateY(-100%)',
-        opacity: isInView ? 1 : 0,
-        transition: 'all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s',
-      }}
     >
       <Link className="flex flex-row items-center space-x-2" to="/">
-        <span className="h-5 w-5 rounded-full bg-red-400"></span>
+        <span
+          className="h-5 w-5 rounded-full 
+        bg-sky-400"
+        ></span>
         <p className="text-lg font-semibold text-black dark:text-white">ZU</p>
       </Link>
       <nav>
@@ -84,6 +80,6 @@ export default function Header() {
           </li>
         </ul>
       </nav>
-    </header>
+    </motion.header>
   );
 }

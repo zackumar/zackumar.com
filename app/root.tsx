@@ -31,8 +31,6 @@ export default function App() {
         (!('theme' in localStorage) &&
           matchMedia('(prefers-color-scheme: dark)').matches)
     );
-
-    console.log(isDarkMode);
   }, []);
 
   return (

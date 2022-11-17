@@ -3,10 +3,6 @@ import { SVGProps, useEffect } from 'react';
 type SunSVGProps = {} | SVGProps<SVGSVGElement>;
 
 export default function SunSVG({ ...props }: SunSVGProps) {
-  useEffect(() => {
-    console.log('sun');
-  }, []);
-
   return (
     <div key="sun-svg">
       <svg {...props} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">

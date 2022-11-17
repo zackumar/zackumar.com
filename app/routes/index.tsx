@@ -74,10 +74,10 @@ export default function Index() {
             id="aboutme"
             className="grid w-full grid-cols-1 gap-5 md:grid-cols-4"
           >
-            <div className="col-span-1 hidden w-full rounded-2xl bg-zinc-700 p-10 text-white shadow-md md:block">
+            <div className="col-span-1 hidden w-full rounded-2xl bg-zinc-100 p-10 text-black shadow-md dark:bg-zinc-700 dark:text-white md:block">
               <h2 className="text-3xl">About Me</h2>
             </div>
-            <div className="col-span-3 w-full rounded-2xl  bg-zinc-800 p-10 text-white shadow-md">
+            <div className="col-span-3 w-full rounded-2xl bg-zinc-50 p-10 text-black shadow-md dark:bg-zinc-800 dark:text-white">
               <h2 className="mb-8 text-4xl md:hidden">About Me</h2>
               <div className="space-y-5">
                 <p>

@@ -24,8 +24,8 @@ export default function Index() {
             </h1>
             <p className="my-8 text-gray-700">
               Aspiring software engineer with a passion for building and
-              creating. Interested in anything everything in tech, especially
-              anything that requires programming.
+              creating. Interested in everything in tech, especially anything
+              that requires programming.
             </p>
             <div className="mt-auto grid grid-cols-2 gap-2 sm:flex sm:flex-row sm:items-center sm:gap-0 sm:space-x-4">
               <a

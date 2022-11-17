@@ -13,7 +13,11 @@ export default function Index() {
       <div className="space-y-5">
         <section className="grid w-full grid-cols-1 gap-y-5 md:grid-cols-3 md:gap-5">
           <motion.div
-            initial={{ opacity: 0, scale: 0.95, y: 50.0 }}
+            initial={
+              typeof document !== 'undefined'
+                ? { opacity: 0, scale: 0.95, y: 50.0 }
+                : undefined
+            }
             animate={{ opacity: 1, scale: 1.0, y: 0.0 }}
             transition={{ duration: 1.0, delay: 1.5 }}
             className="col-span-2 flex h-full w-full flex-col rounded-3xl bg-[url('/assets/images/maincard.webp')] bg-cover bg-center p-12 shadow-md"
@@ -59,7 +63,11 @@ export default function Index() {
           </motion.div>
           <motion.img
             alt="Zack Umar"
-            initial={{ opacity: 0, scale: 0.8 }}
+            initial={
+              typeof document !== 'undefined'
+                ? { opacity: 0, scale: 0.8 }
+                : undefined
+            }
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 1.0, delay: 1.0 }}
             className="-order-1 col-span-1 h-[300px] w-full rounded-3xl object-cover object-center shadow-md sm:h-[450px] md:order-none"
@@ -68,7 +76,11 @@ export default function Index() {
         </section>
         <motion.div
           className="space-y-5"
-          initial={{ opacity: 0, scale: 0.9, y: 20.0 }}
+          initial={
+            typeof document !== 'undefined'
+              ? { opacity: 0, scale: 0.9, y: 20.0 }
+              : undefined
+          }
           animate={{ opacity: 1, scale: 1.0, y: 0.0 }}
           transition={{ duration: 1.0, delay: 2.0 }}
         >
@@ -90,36 +102,79 @@ export default function Index() {
                   to learning new things.
                 </p>
                 <p>
-                  Well-organised, problem solving, with high attention to
-                  detail. Fan of tennis, outdoor activities, 3D printing and
-                  sometimes reading (sometimes).
+                  Well-organised, problem solver, with high attention to detail.
+                  Fan of tennis, outdoor activities, 3D printing and sometimes
+                  reading (sometimes).
                 </p>
               </div>
             </div>
           </section>
-          <section
-            id="projects"
-            className="grid w-full grid-cols-1 gap-5 md:grid-cols-2"
-          >
-            <a className="group" href="https://gdscutsa.com">
-              <div className="relative min-h-[450px] w-full space-y-2 overflow-hidden rounded-2xl bg-zinc-200 transition duration-200 ease-in-out hover:-translate-y-1 hover:scale-[1.01]">
-                <div className="flex flex-row justify-between p-4">
-                  <div>
-                    <h2 className="text-2xl text-black">gdscutsa.com</h2>
-                    <h3 className="text-gray-600">
-                      Google Developer Student Clubs UTSA
-                    </h3>
-                  </div>
+          <section id="projects" className="pt-8">
+            <h2 className="pb-4 text-3xl dark:text-white">Projects</h2>
+            <div className="grid w-full grid-cols-1 gap-5 md:grid-cols-2">
+              <a className="group" href="https://gdscutsa.com">
+                <div className="relative min-h-[450px] w-full space-y-2 overflow-hidden rounded-2xl bg-zinc-100 transition duration-200 ease-in-out hover:-translate-y-1 hover:scale-[1.01]">
+                  <div className="flex flex-row justify-between p-4">
+                    <div>
+                      <h2 className="text-2xl text-black">gdscutsa.com</h2>
+                      <h3 className="text-gray-600">
+                        Google Developer Student Clubs UTSA
+                      </h3>
+                    </div>
 
-                  <ExternalSVG className="h-6 w-6 fill-slate-800 group-hover:fill-sky-400" />
+                    <ExternalSVG className="h-6 w-6 fill-slate-800 group-hover:fill-sky-400" />
+                  </div>
+                  <img
+                    alt="gdscutsa.com"
+                    className="absolute left-5 shadow-md md:left-10"
+                    src="/assets/images/gdscutsa.webp"
+                  ></img>
                 </div>
-                <img
-                  alt="gdscutsa.com"
-                  className="absolute left-5 shadow-md md:left-10"
-                  src="/assets/images/gdscutsa.webp"
-                ></img>
-              </div>
-            </a>
+              </a>
+              <a
+                className="group row-span-2 h-full"
+                href="https://github.com/zackumar/newspaper-snippets-js"
+              >
+                <div className="relative h-full overflow-hidden rounded-2xl bg-indigo-600 transition duration-200 ease-in-out hover:-translate-y-1 hover:scale-[1.01]">
+                  <div className="flex flex-row justify-between p-4">
+                    <div>
+                      <h2 className="text-2xl text-white">
+                        @newspaper_snippets
+                      </h2>
+                      <h3 className="text-slate-300">
+                        Instagram bot that posts snippets of newspapers from 100
+                        years ago!
+                      </h3>
+                    </div>
+                    <ExternalSVG className="h-6 w-6 fill-slate-300 group-hover:fill-sky-400" />
+                  </div>
+                  <img
+                    alt="newspaper_snippets"
+                    className="h-[800px] w-full object-contain"
+                    src="/assets/images/ns.webp"
+                  ></img>
+                </div>
+              </a>
+              <a className="group" href="https://gdscutsa.com">
+                <div className="relative min-h-[450px] w-full space-y-2 overflow-hidden rounded-2xl bg-zinc-700 transition duration-200 ease-in-out hover:-translate-y-1 hover:scale-[1.01]">
+                  <div className="flex flex-row justify-between p-4">
+                    <div>
+                      <h2 className="text-2xl text-white">UTSA CS Slack Bot</h2>
+                      <h3 className="text-slate-100">
+                        A bot to make tutoring a little bit easier for UTSA
+                      </h3>
+                    </div>
+
+                    <ExternalSVG className="h-6 w-6 fill-slate-100 group-hover:fill-sky-400" />
+                  </div>
+                  <img
+                    alt="gdscutsa.com"
+                    className="absolute left-5 shadow-md md:left-10"
+                    src="/assets/images/slack.webp"
+                  ></img>
+                </div>
+              </a>
+            </div>
           </section>
         </motion.div>
       </div>

@@ -20,7 +20,9 @@ export default function Header() {
 
   return (
     <motion.header
-      initial={{ opacity: 0, y: '-100%' }}
+      initial={
+        typeof document !== 'undefined' ? { opacity: 0, y: '-100%' } : undefined
+      }
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 1.5 }}
       className="flex flex-row justify-between pb-5"

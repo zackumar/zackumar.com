@@ -21,10 +21,10 @@ export default function Header() {
   return (
     <motion.header
       initial={
-        typeof document !== 'undefined' ? { opacity: 0, y: '-100%' } : undefined
+        typeof document !== 'undefined' ? { opacity: 0, y: '-75%' } : undefined
       }
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 1.5 }}
+      animate={{ opacity: 1, y: '0%' }}
+      transition={{ duration: 1.5, ease: 'easeInOut' }}
       className="flex flex-row justify-between pb-5"
     >
       <Link className="flex flex-row items-center space-x-2" to="/">
@@ -36,19 +36,30 @@ export default function Header() {
       </Link>
       <nav>
         <ul className="flex flex-row items-center space-x-8">
-          {Navigation.map(({ name, to }) => (
+          {Navigation.map(({ name, to, anchor }) => (
             <li key={name}>
-              <NavLink
-                to={to}
-                className={({ isActive }) =>
-                  isActive
-                    ? 'text-black dark:text-white'
-                    : 'text-gray-500 hover:text-gray-800 dark:text-gray-300 dark:hover:text-gray-100'
-                }
-                end
-              >
-                {name}
-              </NavLink>
+              {anchor ? (
+                <a
+                  href={to}
+                  className={
+                    'text-gray-500 hover:text-gray-800 dark:text-gray-300 dark:hover:text-gray-100'
+                  }
+                >
+                  {name}
+                </a>
+              ) : (
+                <NavLink
+                  to={to}
+                  className={({ isActive }) =>
+                    isActive
+                      ? 'text-black dark:text-white'
+                      : 'text-gray-500 hover:text-gray-800 dark:text-gray-300 dark:hover:text-gray-100'
+                  }
+                  end
+                >
+                  {name}
+                </NavLink>
+              )}
             </li>
           ))}
           <li>

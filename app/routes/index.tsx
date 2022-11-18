@@ -104,11 +104,11 @@ export default function Index() {
                 </p>
                 <p>
                   Well-organised, problem solver, with high attention to detail.
-                  Fan of tennis, outdoor activities, 3D printing and sometimes
-                  reading (sometimes).
+                  Fan of tennis, outdoor activities, 3D printing, amatuer film
+                  photography, and sometimes (sometimes) reading.
                 </p>
                 <a
-                  className="block w-fit rounded-full bg-white py-2 px-5 text-black shadow transition duration-100 ease-in-out hover:-translate-y-0.5 hover:scale-105"
+                  className="block w-fit rounded-full bg-black py-2 px-5 text-white shadow transition duration-100 ease-in-out hover:-translate-y-0.5 hover:scale-105 dark:bg-white dark:text-black"
                   href="/assets/files/resume2022.pdf"
                 >
                   Resume
@@ -157,7 +157,7 @@ export default function Index() {
                   </div>
                   <img
                     alt="newspaper_snippets"
-                    className="h-[800px] w-full object-contain"
+                    className="max-h-[800px] w-full object-contain p-5 md:py-8"
                     src="/assets/images/ns.webp"
                   ></img>
                 </div>

@@ -97,13 +97,13 @@ export default function Index() {
                 <p>
                   I'm a current computer science student at the University of
                   Texas at San Antonio. I have a serious passion for software
-                  engineering and any project that requires it. I'm currently
-                  interested in full-stack web development, but I'm always open
-                  to learning new things.
+                  engineering and any project that requires it. I'm interested
+                  in full-stack web development, but I'm always open to learning
+                  new things.
                 </p>
                 <p>
-                  Well-organised, problem solver, with high attention to detail.
-                  Fan of tennis, outdoor activities, 3D printing, amatuer film
+                  Well-organized, problem solver, with high attention to detail.
+                  Fan of tennis, outdoor activities, 3D printing, amateur film
                   photography, and sometimes (sometimes) reading.
                 </p>
                 <a
@@ -213,6 +213,16 @@ export default function Index() {
               </a>
             </div>
           </section>
+          <footer>
+            <div className="flex flex-col justify-between space-y-1 pt-5 text-center text-xs text-gray-500 sm:flex-row sm:space-y-0 md:text-left ">
+              <p>
+                Made with ❤️ by Zack Umar with{' '}
+                <a className="text-white" href="https://remix.run">
+                  <i>Remix</i>
+                </a>
+              </p>
+            </div>
+          </footer>
         </motion.div>
       </div>
     </main>

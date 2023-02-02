@@ -1,10 +1,14 @@
 import { Link, NavLink } from '@remix-run/react';
 import { Navigation } from '~/constants/navigation';
 import { motion } from 'framer-motion';
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useState } from 'react';
 import SunSVG from '~/assets/SunSVG';
 
-export default function Header() {
+interface HeaderProps {
+  animate?: boolean;
+}
+
+export default function Header({ animate = true }: HeaderProps) {
   const [isDarkMode, setIsDarkMode] = useState(false);
 
   useEffect(() => {
@@ -21,7 +25,9 @@ export default function Header() {
   return (
     <motion.header
       initial={
-        typeof document !== 'undefined' ? { opacity: 0, y: '-75%' } : undefined
+        typeof document !== 'undefined' && animate
+          ? { opacity: 0, y: '-75%' }
+          : undefined
       }
       animate={{ opacity: 1, y: '0%' }}
       transition={{ duration: 1.5, ease: 'easeInOut' }}

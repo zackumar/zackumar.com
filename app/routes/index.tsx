@@ -5,7 +5,6 @@ import Header from '~/components/Header';
 import { CONTACT_EMAIL, GITHUB_URL, LINKEDIN_URL } from '~/constants/links';
 import { motion } from 'framer-motion';
 import ExternalSVG from '~/assets/ExternalSVG';
-import { Link } from '@remix-run/react';
 
 export default function Index() {
   return (
@@ -72,7 +71,7 @@ export default function Index() {
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 1.0, delay: 1.0 }}
             className="-order-1 col-span-1 h-[300px] w-full rounded-3xl object-cover object-center shadow-md sm:h-[450px] md:order-none"
-            src="assets/images/zack.webp"
+            src="/assets/images/zack.webp"
           ></motion.img>
         </section>
         <motion.div
@@ -114,6 +113,34 @@ export default function Index() {
                   Resume
                 </a>
               </div>
+            </div>
+          </section>
+          <section id="work" className="pt-8">
+            <h2 className="pb-4 text-3xl dark:text-white">Work</h2>
+            <div className="grid w-full grid-cols-1 gap-5 md:grid-cols-2">
+              <a className="group" href="https://heb.com">
+                <div className="relative min-h-[450px] w-full space-y-2 overflow-hidden rounded-2xl bg-red-500 transition duration-200 ease-in-out hover:-translate-y-1 hover:scale-[1.01]">
+                  <div className="flex flex-row justify-between p-4">
+                    <div>
+                      <h2 className="text-2xl text-white">H-E-B</h2>
+                      <h3 className="text-slate-200">
+                        Software Engineering Intern at H-E-B (Texas' largest
+                        grocery chain)
+                      </h3>
+                      <p className="pt-4 text-slate-200">
+                        Front-end on heb.com!
+                      </p>
+                    </div>
+
+                    <ExternalSVG className="h-6 w-6 fill-slate-100 group-hover:fill-sky-400" />
+                  </div>
+                  <img
+                    alt="heb.com"
+                    className="absolute left-5 shadow-md md:left-10"
+                    src="/assets/images/heb.webp"
+                  ></img>
+                </div>
+              </a>
             </div>
           </section>
           <section id="projects" className="pt-8">

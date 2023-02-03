@@ -2,6 +2,7 @@ import Header from '~/components/Header';
 
 import rainbow from '~/styles/global.css';
 import type { LinksFunction } from '@remix-run/cloudflare';
+import Footer from '~/components/Footer';
 
 export const links: LinksFunction = () => {
   return [{ rel: 'stylesheet', href: rainbow }];
@@ -11,9 +12,9 @@ export default function Projects() {
   return (
     <main className="container mx-auto flex min-h-screen max-w-5xl flex-col p-5 pb-16">
       <Header animate={false} />
-      <div className="space-y-5">
+      <div className="space-y-5 py-10">
         <section>
-          <div className="flex flex-col items-center justify-center py-52">
+          <div className="flex flex-col items-center justify-center py-32">
             <h1 className="text-rainbow w-fit pb-4 text-6xl font-medium">
               gdscutsa.com
             </h1>
@@ -30,6 +31,7 @@ export default function Projects() {
           </p>
         </section>
       </div>
+      <Footer />
     </main>
   );
 }

@@ -5,6 +5,7 @@ import Header from '~/components/Header';
 import { CONTACT_EMAIL, GITHUB_URL, LINKEDIN_URL } from '~/constants/links';
 import { motion } from 'framer-motion';
 import ExternalSVG from '~/assets/ExternalSVG';
+import Footer from '~/components/Footer';
 
 export default function Index() {
   return (
@@ -213,16 +214,7 @@ export default function Index() {
               </a>
             </div>
           </section>
-          <footer>
-            <div className="flex flex-col justify-between space-y-1 pt-5 text-center text-xs text-gray-500 sm:flex-row sm:space-y-0 md:text-left ">
-              <p>
-                Made with ❤️ by Zack Umar with{' '}
-                <a className="text-white" href="https://remix.run">
-                  <i>Remix</i>
-                </a>
-              </p>
-            </div>
-          </footer>
+          <Footer />
         </motion.div>
       </div>
     </main>

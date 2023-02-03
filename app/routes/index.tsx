@@ -77,11 +77,11 @@ export default function Index() {
         </section>
         <motion.div
           className="space-y-5"
-          initial={
-            typeof document !== 'undefined'
-              ? { opacity: 0, scale: 0.9, y: 20.0 }
-              : undefined
-          }
+          // initial={
+          //   typeof document !== 'undefined'
+          //     ? { opacity: 0, scale: 0.9, y: 20.0 }
+          //     : undefined
+          // }
           animate={{ opacity: 1, scale: 1.0, y: 0.0 }}
           transition={{ duration: 1.0, delay: 2.0 }}
         >
@@ -120,7 +120,7 @@ export default function Index() {
             <h2 className="pb-4 text-3xl dark:text-white">Work</h2>
             <div className="grid w-full grid-cols-1 gap-5 md:grid-cols-2">
               <a className="group" href="https://heb.com">
-                <div className="relative min-h-[450px] w-full space-y-2 overflow-hidden rounded-2xl bg-red-500 transition duration-200 ease-in-out hover:-translate-y-1 hover:scale-[1.01]">
+                <div className="relative min-h-[450px] w-full space-y-2 overflow-hidden rounded-2xl bg-red-500 shadow-md transition duration-200 ease-in-out hover:-translate-y-1 hover:scale-[1.01]">
                   <div className="flex flex-row justify-between p-4">
                     <div>
                       <h2 className="text-2xl text-white">H-E-B</h2>
@@ -129,7 +129,7 @@ export default function Index() {
                         grocery chain)
                       </h3>
                       <p className="pt-4 text-slate-200">
-                        Front-end on heb.com!
+                        Front-end engineer on heb.com!
                       </p>
                     </div>
 
@@ -148,7 +148,7 @@ export default function Index() {
             <h2 className="pb-4 text-3xl dark:text-white">Projects</h2>
             <div className="grid w-full grid-cols-1 gap-5 md:grid-cols-2">
               <a className="group" href="https://gdscutsa.com">
-                <div className="relative min-h-[450px] w-full space-y-2 overflow-hidden rounded-2xl bg-zinc-100 transition duration-200 ease-in-out hover:-translate-y-1 hover:scale-[1.01]">
+                <div className="relative min-h-[450px] w-full space-y-2 overflow-hidden rounded-2xl bg-zinc-100 shadow-md transition duration-200 ease-in-out hover:-translate-y-1 hover:scale-[1.01]">
                   <div className="flex flex-row justify-between p-4">
                     <div>
                       <h2 className="text-2xl text-black">gdscutsa.com</h2>
@@ -170,7 +170,7 @@ export default function Index() {
                 className="group row-span-2 h-full"
                 href="https://github.com/zackumar/newspaper-snippets-js"
               >
-                <div className="relative h-full overflow-hidden rounded-2xl bg-indigo-600 transition duration-200 ease-in-out hover:-translate-y-1 hover:scale-[1.01]">
+                <div className="relative h-full overflow-hidden rounded-2xl bg-indigo-600 shadow-md transition duration-200 ease-in-out hover:-translate-y-1 hover:scale-[1.01]">
                   <div className="flex flex-row justify-between p-4">
                     <div>
                       <h2 className="text-2xl text-white">
@@ -194,7 +194,7 @@ export default function Index() {
                 className="group"
                 href="https://github.com/zackumar/utsa-cs-bot"
               >
-                <div className="relative min-h-[450px] w-full space-y-2 overflow-hidden rounded-2xl bg-zinc-700 transition duration-200 ease-in-out hover:-translate-y-1 hover:scale-[1.01]">
+                <div className="relative min-h-[450px] w-full space-y-2 overflow-hidden rounded-2xl bg-zinc-700 shadow-md transition duration-200 ease-in-out hover:-translate-y-1 hover:scale-[1.01]">
                   <div className="flex flex-row justify-between p-4">
                     <div>
                       <h2 className="text-2xl text-white">UTSA CS Slack Bot</h2>
@@ -206,9 +206,34 @@ export default function Index() {
                     <ExternalSVG className="h-6 w-6 fill-slate-100 group-hover:fill-sky-400" />
                   </div>
                   <img
-                    alt="gdscutsa.com"
+                    alt="slack utsa cs bot"
                     className="absolute left-5 shadow-md md:left-10"
                     src="/assets/images/slack.webp"
+                  ></img>
+                </div>
+              </a>
+              <a
+                className="group md:col-span-2"
+                href="https://github.com/zackumar/FilmMuncher"
+              >
+                <div className="relative min-h-[450px] w-full space-y-2 overflow-hidden rounded-2xl bg-violet-500 shadow-md transition duration-200 ease-in-out hover:-translate-y-1 hover:scale-[1.01]">
+                  <div className="flex flex-row justify-between p-4">
+                    <div>
+                      <h2 className="text-2xl text-white">
+                        <span>Film Muncher</span>
+                      </h2>
+                      <h3 className="text-slate-100">
+                        An automatic (35mm and possibly 120mm/APS) film holder +
+                        software for DSLR scanning for MacOS/Linux
+                      </h3>
+                    </div>
+
+                    <ExternalSVG className="h-6 w-6 fill-slate-100 group-hover:fill-sky-400" />
+                  </div>
+                  <img
+                    alt="gdscutsa.com"
+                    className="absolute left-5 shadow-md md:left-0 md:px-10"
+                    src="/assets/images/filmscanner.webp"
                   ></img>
                 </div>
               </a>

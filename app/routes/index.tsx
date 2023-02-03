@@ -124,11 +124,11 @@ export default function Index() {
                   <div className="flex flex-row justify-between p-4">
                     <div>
                       <h2 className="text-2xl text-white">H-E-B</h2>
-                      <h3 className="text-slate-200">
+                      <h3 className="text-slate-100">
                         Software Engineering Intern at H-E-B (Texas' largest
                         grocery chain)
                       </h3>
-                      <p className="pt-4 text-slate-200">
+                      <p className="pt-4 text-slate-100">
                         Front-end engineer on heb.com!
                       </p>
                     </div>
@@ -222,16 +222,20 @@ export default function Index() {
                       <h2 className="text-2xl text-white">
                         <span>Film Muncher</span>
                       </h2>
-                      <h3 className="text-slate-100">
-                        An automatic (35mm and possibly 120mm/APS) film holder +
+                      <h3 className="font-bold text-slate-100">
+                        An automatic 35mm/APS (and possibly 120mm) film holder +
                         software for DSLR scanning for MacOS/Linux
                       </h3>
+                      <p className="text-sm text-slate-100">
+                        Because why spend hours doing something tedious, when
+                        you can spend weeks building something to do it for you?
+                      </p>
                     </div>
 
                     <ExternalSVG className="h-6 w-6 fill-slate-100 group-hover:fill-sky-400" />
                   </div>
                   <img
-                    alt="gdscutsa.com"
+                    alt="film muncher UI"
                     className="absolute left-5 shadow-md md:left-0 md:px-10"
                     src="/assets/images/filmscanner.webp"
                   ></img>

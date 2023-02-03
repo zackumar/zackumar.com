@@ -77,11 +77,11 @@ export default function Index() {
         </section>
         <motion.div
           className="space-y-5"
-          // initial={
-          //   typeof document !== 'undefined'
-          //     ? { opacity: 0, scale: 0.9, y: 20.0 }
-          //     : undefined
-          // }
+          initial={
+            typeof document !== 'undefined'
+              ? { opacity: 0, scale: 0.9, y: 20.0 }
+              : undefined
+          }
           animate={{ opacity: 1, scale: 1.0, y: 0.0 }}
           transition={{ duration: 1.0, delay: 2.0 }}
         >

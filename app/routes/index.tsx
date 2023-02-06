@@ -28,7 +28,7 @@ export default function Index() {
               engineer.
             </h1>
             <p className="my-8 text-gray-700">
-              Aspiring software engineer with a passion for building and
+              Software engineerint student with a passion for building and
               creating. Interested in everything in tech, especially anything
               that requires programming.
             </p>
@@ -98,14 +98,26 @@ export default function Index() {
                 <p>
                   I'm a current computer science student at the University of
                   Texas at San Antonio. I have a serious passion for software
-                  engineering and any project that requires it. I'm interested
-                  in full-stack web development, but I'm always open to learning
-                  new things.
+                  engineering and any project that requires it. I'm currently
+                  interested in full-stack web development, but I'm always open
+                  to learning new things.
                 </p>
                 <p>
                   Well-organized, problem solver, with high attention to detail.
                   Fan of tennis, outdoor activities, 3D printing, amateur film
-                  photography, and sometimes (sometimes) reading.
+                  photography, and sometimes (sometimes) reading. Oh. And music.
+                  Currently in love with{' '}
+                  <a
+                    href="https://open.spotify.com/artist/6zpptMjiapn5PB0Y5k3xWN"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-zinc-900 hover:text-sky-400 dark:text-zinc-200 dark:hover:text-sky-400"
+                  >
+                    <u>
+                      <i>Durry</i>
+                    </u>
+                  </a>
+                  .
                 </p>
                 <a
                   className="block w-fit rounded-full bg-black py-2 px-5 text-white shadow transition duration-100 ease-in-out hover:-translate-y-0.5 hover:scale-105 dark:bg-white dark:text-black"

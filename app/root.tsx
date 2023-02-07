@@ -22,7 +22,7 @@ export const meta: MetaFunction = () => ({
 });
 
 export default function App() {
-  const [isDarkMode, setIsDarkMode] = useState(false);
+  const [isDarkMode, setIsDarkMode] = useState(true);
 
   useEffect(() => {
     setIsDarkMode(

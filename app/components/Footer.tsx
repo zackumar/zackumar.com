@@ -1,6 +1,11 @@
-export default function Footer() {
+export default function Footer({
+  className,
+  ...props
+}: {
+  className?: string;
+}) {
   return (
-    <footer>
+    <footer className={className} {...props}>
       <div className="flex flex-col justify-between space-y-1 pt-5 text-center text-xs text-gray-500 sm:space-y-0 md:flex-row lg:text-left ">
         <p>
           Made with ❤️ by Zack Umar with{' '}

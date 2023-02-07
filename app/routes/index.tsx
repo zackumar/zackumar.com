@@ -121,7 +121,7 @@ export default function Index() {
                 </p>
                 <a
                   className="block w-fit rounded-full bg-black py-2 px-5 text-white shadow transition duration-100 ease-in-out hover:-translate-y-0.5 hover:scale-105 dark:bg-white dark:text-black"
-                  href="/assets/files/resume2022.pdf"
+                  href="/resume.pdf"
                 >
                   Resume
                 </a>
@@ -159,7 +159,7 @@ export default function Index() {
           <section id="projects" className="pt-8">
             <h2 className="pb-4 text-3xl dark:text-white">Projects</h2>
             <div className="grid w-full grid-cols-1 gap-5 md:grid-cols-2">
-              <a className="group" href="https://gdscutsa.com">
+              <a className="group" href="/projects/gdscutsa.com">
                 <div className="relative min-h-[450px] w-full space-y-2 overflow-hidden rounded-2xl bg-zinc-100 shadow-md transition duration-200 ease-in-out hover:-translate-y-1 hover:scale-[1.01]">
                   <div className="flex flex-row justify-between p-4">
                     <div>
@@ -193,7 +193,7 @@ export default function Index() {
                         years ago!
                       </h3>
                     </div>
-                    <ExternalSVG className="h-6 w-6 fill-slate-300 group-hover:fill-sky-400" />
+                    <ExternalSVG className="h-[24px] w-[24px] fill-slate-300 group-hover:fill-sky-400" />
                   </div>
                   <img
                     alt="newspaper_snippets"

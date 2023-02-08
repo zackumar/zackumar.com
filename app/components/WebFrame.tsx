@@ -156,7 +156,10 @@ export function WebFrame({
         ) : null}
 
         {isLoading ? (
-          <div className="flex h-full w-full items-center justify-center">
+          <div
+            style={{ imageRendering: 'pixelated' }}
+            className="flex h-full w-full items-center justify-center"
+          >
             <img
               className="h-[20%]"
               src="/assets/images/internet.gif"

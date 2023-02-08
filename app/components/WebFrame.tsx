@@ -16,14 +16,15 @@ export function WebFrame({
   hint = false,
   ...props
 }: WebFrameProps) {
-  const [isClosed, setIsClosed] = useState(false);
-  const [isLoading, setIsLoading] = useState(false);
+  const [isMain, setMain] = useState(true);
+  const [isRoll, setRoll] = useState(false);
+  const [isLoading, setLoading] = useState(false);
 
   useEffect(() => {
     if (isLoading) {
       setTimeout(() => {
-        setIsLoading(false);
-      }, 3000);
+        setLoading(false);
+      }, 2000);
     }
   }, [isLoading]);
 
@@ -34,7 +35,7 @@ export function WebFrame({
     >
       {hint && animate ? (
         <div className="absolute -right-40 hidden lg:block">
-          {isClosed || isLoading ? (
+          {!isMain || isLoading ? (
             <svg
               className="h-40 w-40"
               viewBox="0 0 126 162"
@@ -52,7 +53,7 @@ export function WebFrame({
             </svg>
           ) : null}
 
-          {!isClosed && !isLoading ? (
+          {isMain && !isLoading ? (
             <svg
               className="h-40 w-40"
               viewBox="0 0 119 161"
@@ -74,16 +75,21 @@ export function WebFrame({
 
       <div className="flex flex-row flex-nowrap justify-between rounded-t-md border border-b-black bg-gray-200 p-1">
         <h1 className="overflow-hidden text-clip whitespace-nowrap text-xs">
-          ▒ {!isClosed && !isLoading ? title : null}
-          {isClosed ? 'untitled' : null}
-          {!isClosed && isLoading ? 'Loading...' : null}{' '}
+          ▒ {isMain && !isLoading ? title : null}
+          {isRoll && !isLoading ? 'RICK ROLLLLLL!!!!!!!' : null}
+          {!isMain && !isRoll ? 'untitled' : null}
+          {isLoading ? 'Loading...' : null}{' '}
           ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒
         </h1>
         <button
           tabIndex={-1}
           className="ml-1 border border-black"
           onClick={() => {
-            if (animate) setIsClosed(true);
+            if (animate) {
+              setMain(false);
+              setRoll(false);
+              setLoading(false);
+            }
           }}
         >
           <svg
@@ -96,9 +102,31 @@ export function WebFrame({
         </button>
       </div>
       <div className="h-full overflow-hidden rounded-b-md">
-        {!isClosed && !isLoading ? children : null}
+        {isMain && !isLoading ? children : null}
+        {isRoll && !isLoading ? (
+          <>
+            <video
+              className="aspect-video"
+              src="/assets/videos/roll.webm"
+              autoPlay
+              controls
+            ></video>
+            <div className="p-4">
+              <p>Sorry sorry. I had to.</p>
+              <button
+                onClick={() => {
+                  setMain(true);
+                  setRoll(false);
+                  setLoading(true);
+                }}
+              >
+                <u>Let's go back</u>
+              </button>{' '}
+            </div>
+          </>
+        ) : null}
 
-        {isClosed ? (
+        {!isMain && !isRoll ? (
           <div className="h-full p-4">
             <img
               className="h-20 w-20"
@@ -108,17 +136,26 @@ export function WebFrame({
             <p>Why did close?</p>
             <button
               onClick={() => {
-                setIsClosed(false);
-                setIsLoading(true);
+                setMain(true);
+                setLoading(true);
               }}
             >
               <u>Click here</u>
             </button>{' '}
-            to go back
+            to go back or{' '}
+            <button
+              onClick={() => {
+                setMain(false);
+                setRoll(true);
+                setLoading(true);
+              }}
+            >
+              <u>visit here instead</u>
+            </button>{' '}
           </div>
         ) : null}
 
-        {isLoading && !isClosed ? (
+        {isLoading ? (
           <div className="flex h-full w-full items-center justify-center">
             <img
               className="h-[20%]"

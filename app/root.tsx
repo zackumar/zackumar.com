@@ -19,6 +19,8 @@ export const meta: MetaFunction = () => ({
   charset: 'utf-8',
   title: 'Zack Umar',
   viewport: 'width=device-width,initial-scale=1',
+  description:
+    "Hi, I'm Zackarya (Zack) Umar, computer science student and aspiring software engineer",
 });
 
 export default function App() {

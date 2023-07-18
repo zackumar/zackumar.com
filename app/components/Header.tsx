@@ -24,13 +24,13 @@ export default function Header({ animate = true }: HeaderProps) {
 
   return (
     <motion.header
-      initial={
-        typeof document !== 'undefined' && animate
-          ? { opacity: 0, y: '-75%' }
-          : undefined
-      }
-      animate={{ opacity: 1, y: '0%' }}
-      transition={{ duration: 1.5, ease: 'easeInOut' }}
+      // initial={
+      //   typeof document !== 'undefined' && animate
+      //     ? { opacity: 0, y: '-75%' }
+      //     : undefined
+      // }
+      // animate={{ opacity: 1, y: '0%' }}
+      // transition={{ duration: 1.5, ease: 'easeInOut' }}
       className="flex flex-row justify-between pb-5"
     >
       <Link className="flex flex-row items-center space-x-2" to="/">

@@ -41,17 +41,10 @@ export default function Resume() {
     };
   }, []);
 
-  // const [numPages, setNumPages] = useState<number>();
-  // const [pageNumber] = useState<number>(1);
-
-  // function onDocumentLoadSuccess({ numPages }: { numPages: number }): void {
-  // setNumPages(numPages);
-  // }
-
   return (
     <main className="container mx-auto flex min-h-screen max-w-5xl flex-col p-5 pb-16 text-black dark:text-white">
       <Header animate={false} />
-      <div className="py-8">
+      <div>
         <section className="container relative mx-auto space-y-4">
           <div ref={pdfWrapper} className="w-500">
             <WebFrame title="resume.pdf" className="min-h-[500px] w-full">

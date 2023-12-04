@@ -72,6 +72,8 @@ export default function Resume() {
           <a
             className="col-span-2 mx-auto flex w-fit transform flex-row items-center justify-center space-x-1 rounded-full bg-zinc-900 px-5 py-3 text-white shadow duration-100 ease-in-out hover:-translate-y-0.5 hover:scale-105"
             href="/files/resume.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
           >
             <span>View PDF</span>
           </a>

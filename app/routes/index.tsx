@@ -7,6 +7,8 @@ import { motion } from 'framer-motion';
 import ExternalSVG from '~/assets/ExternalSVG';
 import Footer from '~/components/Footer';
 import { WebFrame } from '~/components/WebFrame';
+import { RESUME_PATH } from '~/constants/navigation';
+import { Link } from '@remix-run/react';
 
 export default function Index() {
   return (
@@ -134,12 +136,12 @@ export default function Index() {
                   </a>
                   .
                 </p>
-                <a
+                <Link
                   className="block w-fit rounded-full bg-black px-5 py-2 text-white shadow transition duration-100 ease-in-out hover:-translate-y-0.5 hover:scale-105 dark:bg-white dark:text-black"
-                  href="/resume.pdf"
+                  to={RESUME_PATH}
                 >
                   Resume
-                </a>
+                </Link>
               </div>
             </div>
             <svg

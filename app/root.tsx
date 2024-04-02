@@ -1,4 +1,4 @@
-import type { MetaFunction } from '@remix-run/cloudflare';
+import type { MetaFunction, LinksFunction } from '@remix-run/cloudflare';
 import {
   Links,
   Meta,
@@ -8,13 +8,11 @@ import {
 } from '@remix-run/react';
 import { useEffect, useState } from 'react';
 
-// import stylesheet from '~/tailwind.css?url';
+import stylesheet from '~/tailwind.css?url';
 
-// export const links: LinksFunction = () => [
-//   { rel: 'stylesheet', href: stylesheet },
-// ];
-
-import './tailwind.css';
+export const links: LinksFunction = () => [
+  { rel: 'stylesheet', href: stylesheet },
+];
 
 export const meta: MetaFunction = () => {
   return [

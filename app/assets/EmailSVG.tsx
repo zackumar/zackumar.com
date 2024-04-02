@@ -1,6 +1,6 @@
 import type { SVGProps } from 'react';
 
-type EmailSVGProps = {} | SVGProps<SVGSVGElement>;
+type EmailSVGProps = SVGProps<SVGSVGElement>;
 
 export default function EmailSVG({ ...props }: EmailSVGProps) {
   return (

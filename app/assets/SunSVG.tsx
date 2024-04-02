@@ -1,6 +1,6 @@
-import { SVGProps, useEffect } from 'react';
+import { SVGProps } from 'react';
 
-type SunSVGProps = {} | SVGProps<SVGSVGElement>;
+type SunSVGProps = SVGProps<SVGSVGElement>;
 
 export default function SunSVG({ ...props }: SunSVGProps) {
   return (

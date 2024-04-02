@@ -1,6 +1,6 @@
 import type { SVGProps } from 'react';
 
-type ExternalSVGProps = {} | SVGProps<SVGSVGElement>;
+type ExternalSVGProps = SVGProps<SVGSVGElement>;
 
 export default function ExternalSVG({ ...props }: ExternalSVGProps) {
   return (

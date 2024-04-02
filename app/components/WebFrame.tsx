@@ -105,7 +105,9 @@ export function WebFrame({
               src="/assets/videos/roll.webm"
               autoPlay
               controls
-            ></video>
+            >
+              <track kind="captions"></track>
+            </video>
             <div className="p-4">
               <p>Sorry sorry. I had to.</p>
               <button
@@ -115,7 +117,7 @@ export function WebFrame({
                   setLoading(true);
                 }}
               >
-                <u>Let's go back</u>
+                <u>Let&apos;s go back</u>
               </button>{' '}
             </div>
           </>

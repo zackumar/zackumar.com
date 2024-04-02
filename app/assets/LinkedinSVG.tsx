@@ -1,6 +1,6 @@
 import type { SVGProps } from 'react';
 
-type LinkedinSVGProps = {} | SVGProps<SVGSVGElement>;
+type LinkedinSVGProps = SVGProps<SVGSVGElement>;
 
 export default function LinkedinSVG({ ...props }: LinkedinSVGProps) {
   return (

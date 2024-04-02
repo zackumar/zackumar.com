@@ -1,6 +1,6 @@
-import { SVGProps, useEffect } from 'react';
+import { SVGProps } from 'react';
 
-type MoonSVGProps = {} | SVGProps<SVGSVGElement>;
+type MoonSVGProps = SVGProps<SVGSVGElement>;
 
 export default function MoonSVG({ ...props }: MoonSVGProps) {
   return (

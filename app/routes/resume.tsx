@@ -1,20 +1,20 @@
-// import { useState } from 'react';
 import { Document, Page, pdfjs } from 'react-pdf';
 import Footer from '~/components/Footer';
 import Header from '~/components/Header';
 import { WebFrame } from '~/components/WebFrame';
-import textLayer from 'react-pdf/dist/Page/TextLayer.css';
-import annotationLayer from 'react-pdf/dist/esm/Page/AnnotationLayer.css';
-import type { LinksFunction } from '@remix-run/cloudflare';
 import { useEffect, useRef, useState } from 'react';
 import throttle from 'lodash.throttle';
 
-import rainbow from '~/styles/global.css';
+import { LinksFunction } from '@remix-run/cloudflare';
+
+import textLayer from 'react-pdf/dist/Page/TextLayer.css?url';
+import annotationLayer from 'react-pdf/dist/esm/Page/AnnotationLayer.css?url';
+import stylesheet from '~/global.css?url';
 
 export const links: LinksFunction = () => [
+  { rel: 'stylesheet', href: stylesheet },
   { rel: 'stylesheet', href: textLayer },
   { rel: 'stylesheet', href: annotationLayer },
-  { rel: 'stylesheet', href: rainbow },
 ];
 
 pdfjs.GlobalWorkerOptions.workerSrc = `//unpkg.com/pdfjs-dist@${pdfjs.version}/build/pdf.worker.min.js`;
@@ -43,7 +43,7 @@ export default function Resume() {
 
   return (
     <main className="container mx-auto flex min-h-screen max-w-5xl flex-col p-5 pb-16 text-black dark:text-white">
-      <Header animate={false} />
+      <Header />
       <div>
         <section className="container relative mx-auto space-y-8">
           <div ref={pdfWrapper} className="w-500">

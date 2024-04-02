@@ -1,6 +1,6 @@
 import type { SVGProps } from 'react';
 
-type GithubSVGProps = {} | SVGProps<SVGSVGElement>;
+type GithubSVGProps = SVGProps<SVGSVGElement>;
 
 export default function GithubSVG({ ...props }: GithubSVGProps) {
   return (

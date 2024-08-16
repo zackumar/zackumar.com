@@ -1,6 +1,15 @@
 .text-rainbow {
   display: inline-block;
   color: #fff;
+  background: linear-gradient(271deg, #a162e8 50%, #f093b0 70%, #f4ba47 94%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+html.dark .text-rainbow {
+  display: inline-block;
+  color: #fff;
   background: linear-gradient(
     271deg,
     #a0e9ff 30%,

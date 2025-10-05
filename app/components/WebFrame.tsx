@@ -1,7 +1,5 @@
 import { useEffect, useState } from 'react';
 
-//test commen
-
 interface WebFrameProps {
   title: string;
   children?: React.ReactNode;
@@ -109,7 +107,7 @@ export function WebFrame({
               <track kind="captions"></track>
             </video>
             <div className="p-4">
-              <p>Sorry sorry. I had to.</p>
+              <p>:D</p>
               <button
                 onClick={() => {
                   setMain(true);

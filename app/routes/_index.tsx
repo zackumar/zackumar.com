@@ -78,7 +78,7 @@ export default function Index() {
             </div>
           </div>
           <div className="-order-1 col-span-1 h-[300px] w-full shadow-md sm:h-[450px] md:order-none">
-            <WebFrame title="portrait.png" className="h-full" hint>
+            <WebFrame title="portrait.png" className="h-full">
               <img
                 src="/assets/images/zack.webp"
                 alt="Zack Umar"
